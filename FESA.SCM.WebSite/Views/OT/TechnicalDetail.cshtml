@@ -1,0 +1,207 @@
+﻿@model FESA.SCM.WebSite.Models.AssignmentModel
+@{
+    ViewData["Title"] = "TechnicalDetail";
+}
+@Html.Partial("_Menu")
+
+<section class="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="mt-30 return">
+                    <a href="WorkOrder"><i class="fas fa-arrow-left"></i> Regresar</a>
+                </span>
+                
+                <h3 class="mb-30 mt-10">@ViewBag.TechnicalName</h3>
+            </div>
+
+            <div class="technicaldetail col-md-4">
+                <div class="technicaldetail1 col-md-12">
+                    <h4>Orden de Trabajo @Model.WorkOrderNumber</h4>
+                    <h3>@Model.CompanyName</h3>
+                    <p>
+                        @ViewBag.Charge
+                    </p>
+                    <hr />
+
+                    <div>
+                        <p>Estado del Técnico <button class="float-right btn btn-sm btn-InProcess">@ViewBag.TecnihalStatus</button></p>
+
+                        <p>Estado de la OT <button class="float-right btn btn-sm btn-assigned">@FESA.SCM.WebSite.Models.ConvertAssignmentStatus.GetStatusSPA(Model.Status)</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technicaldetail col-lg-8" style="background-color: #fff;">
+                <div class="technicaldetail2 col-md-12">
+                    <h5>Checklist Documentos</h5>
+                    <hr />
+                    <div class="row">
+                        @if (ViewBag.TotalDocumentsOT == 0) {
+                            @foreach (var item in ViewBag.DocumentsEntity) {
+                                <div class="col-md-4">
+                                    <p>
+                                        <i class="fas fa-check" style="color:#7d7d7d;"></i>
+                                        @item.Name
+                                    </p>
+                                </div>
+                            }
+                        } else {
+                            @foreach (var item in ViewBag.DocumentsEntity) {
+
+                                <div class="col-md-4">
+                                    <p>
+                                        @{
+                                            List<FESA.SCM.WebSite.Models.DocumentModel> DocAssig = ViewBag.DocumentsAssignment;
+                                            var itemdocument = DocAssig.Where(i => i.DocumentId == item.Id).ToList();
+                                        }
+                                        @if (itemdocument != null && itemdocument.Count > 0) {
+                                            <i class="fas fa-check" style="color:#31a0ff;"></i>
+                                            @item.Name
+                                            @if (item.Popup) {
+                                                var target = '#' + item.Id;
+                                                //target = target.Replace(" ", "").Trim();
+                                                <img src="@Url.Content("~/iconos/0004.svg")" data-toggle="modal" data-target="@target" class="icono" style="cursor: pointer;" />
+                                            }
+                                        } else {
+                                            <i class="fas fa-check" style="color:#7d7d7d;"></i>
+                                            @item.Name
+
+                                        }
+                                    </p>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="detailot col-lg-12">
+                <br />
+                <div class="technicaldetail2 col-md-12">
+                    <h5>Actividades</h5>
+                    <hr />
+                    <div class="table-activities-scroll-y">
+                        <table class="tableot1">
+                            <thead style="text-align: center;">
+                                <tr>
+                                    <th scope="col" style="text-align: left;">ACTIVIDAD</th>
+                                    <th scope="col">COMENTARIO</th>
+                                    <th scope="col">UBICACION INICIO</th>
+                                    <th scope="col">FECHA INICIO</th>
+                                    <th scope="col">HORA INICIO</th>
+                                    <th scope="col">UBICACION FIN</th>
+                                    <th scope="col">FECHA FIN</th>
+                                    <th scope="col">HORA FIN</th>
+                                    <th scope="col">DURACION DE LA ACTIVIDAD</th>
+                                    <th scope="col">ESTADO DE LA ACTIVIDAD</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center;">
+
+                                @foreach (var item in Model.Activities)
+                                {
+
+                                    if (item.Name == "Informe Final")
+                                    {
+                                        <tr class="final">
+                                            <td style="text-align: left;">@item.Name</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>@item.StartDate.ToString("dd/MM/yyyy")</td>
+                                            <td>@item.StartDate.ToString("hh:mm")</td>
+                                            <td></td>
+                                            <td>@item.EndDate.ToString("dd/MM/yyyy")</td>
+                                            <td>@item.EndDate.ToString("hh:mm")</td>
+                                            <td>@item.Duration</td>
+                                            <td></td>
+                                        </tr>
+
+                                    }
+                                    else
+                                    {
+                                        if (item.ActivityState == FESA.SCM.WebSite.Models.ActivityState.Completed && item.Day && item.Name == "Servicio de campo")
+                                        {
+                                            <tr class="final">
+                                                <td style="text-align: left;">@item.Name</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>@item.StartDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.StartDate.ToString("hh:mm")</td>
+                                                <td></td>
+                                                <td>@item.EndDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.EndDate.ToString("hh:mm")</td>
+                                                <td>@string.Format("{0:hh\\:mm}", item.Duration)</td>
+                                                <td><div class="circle"></div>Fin de la Jornada</td>
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            <tr>
+                                                <td style="text-align: left;">@item.Name</td>
+                                                <td style="cursor: pointer;" data-toggle="modal" data-target="#ComentView">@item.Description</td>
+                                                <td>
+                                                   
+                                                    @*<a href="@item.InitialLocation"><img class="icono" src="~/iconos/0005.svg" /></a>*@
+                                                </td>
+                                                <td>@item.StartDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.StartDate.ToString("hh:mm")</td>
+                                                <td>
+                                                    @*<a href="@item.FinalLocation"><img class="icono" src="~/iconos/0005.svg" /></a>*@
+                                                </td>
+                                                <td>@item.EndDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.EndDate.ToString("hh:mm")</td>
+                                                <td>@string.Format("{0:hh\\:mm}", item.Duration)</td>
+                                                <td>@FESA.SCM.WebSite.Models.ConvertActivityState.GetStatusSPA(item.ActivityState)</td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@if (ViewBag.TotalDocumentsOT == 1) {
+    List<FESA.SCM.WebSite.Models.DocumentModel> ListEntityDocs = ViewBag.DocumentsEntity;
+    foreach (var item in ListEntityDocs) {
+        if (item.Popup) {
+                <div class="modal fade" id="@item.Id" tabindex="-1" role="dialog" aria-labelledby="@item.Id" aria-hidden="true" style="padding-right: 17px;">
+                <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id=""></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="display: block;">
+                            <h4 style="font-weight: bold;margin-bottom: 2rem;">Documentos Requeridos:</h4>
+                            @{
+                                foreach (FESA.SCM.WebSite.Models.DocumentModel itemdoc in ViewBag.DocumentsAssignment) {
+                                    if (itemdoc.DocumentId == item.Id) {
+                                        <h5 style="color: #fc0;font-weight: bold;padding: 5px 0;font-size: 20px;">@itemdoc.Name</h5>
+                                        <h4 style="padding: 5px 0;font-weight: bold;color: #505050;">@itemdoc.Date.ToString("dd/MM/yyyy")</h4>
+                                        <p style="font-size: 14px;color: #626262;">Fecha estimada de inicio</p>
+                                        <h5 style="padding: 12px 0;color: #bdbdbd;">COMENTARIO:</h5>
+                                        <p style="font-size: 14px;color: #626262;">@itemdoc.Text</p>
+                                    }
+                                }
+                            }
+                        </div>
+                        <div class="modal-footer" style="display: block;text-align: center;">
+                            <button type="button" class="btn btn-yellow" data-dismiss="modal" style="margin: 0 12px;">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+ }
+

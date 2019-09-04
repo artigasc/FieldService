@@ -1,0 +1,830 @@
+﻿@using Microsoft.AspNetCore.Http
+@using FESA.SCM.WebSite.Helpers
+@model FESA.SCM.WebSite.Models.AssignmentModel;
+@{
+    ViewData["Title"] = "ReportsOT";
+    FESA.SCM.WebSite.Models.UserModel UserSession = Context.Session.Get<FESA.SCM.WebSite.Models.UserModel>("UserSesion");
+    var totalFiles = 0;
+    if (Model.Report.Files != null) {
+        totalFiles = Model.Report.Files.Count;
+    }
+
+
+}
+
+<script>
+    $(document).ready(function () {
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+    });
+</script>
+
+@Html.Partial("_Menu")
+<section class="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="mt-30 return">
+                    <a href="@Context.Session.GetString("ButtonBack")"><i class="fas fa-arrow-left"></i> Regresar</a>
+                </span>
+                <h3 class="mb-30">@Context.Session.GetString("TitleForm")</h3>
+            </div>
+
+            <div class="reportsot col-md-4">
+                <div class="reportsot1 col-md-12">
+                    <h4>Orden de Trabajo @Model.WorkOrderNumber</h4>
+                    <h3 style="padding: 6px 0;">@ViewBag.LiderName</h3>
+                    <p>@ViewBag.PersonnelType</p>
+                    <hr />
+
+                    <h5>Orden de Trabajo  @Model.WorkOrderNumber</h5>
+                    <h3 style="padding: 6px 0;">@Model.CompanyName</h3>
+                    <h4>RUC: @Model.Ruc</h4>
+
+                    <hr />
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>OT</td>
+                                <td style="font-weight: bold;">: @Model.WorkOrderNumber</td>
+                            </tr>
+                            <tr>
+                                <td>MARCA</td>
+                                <td style="font-weight: bold;">: @Model.Machine?.Brand</td>
+                            </tr>
+                            <tr>
+                                <td>MODELO </td>
+                                <td style="font-weight: bold;">: @Model.Machine?.Model</td>
+                            </tr>
+                            <tr>
+                                <td>SMU/HORÓMETRO</td>
+                                <td style="font-weight: bold;">: @Model.Machine?.totalHoursFunction HORAS</td>
+                            </tr>
+                            <tr>
+                                <td>NRO. SERIE</td>
+                                <td style="font-weight: bold;">: @Model.Machine.SerialNumber</td>
+                            </tr>
+                            <tr>
+                                <td>FECHA DE ENTREGA DEL INFORME</td>
+                                <td style="font-weight: bold;">: @Model.Report?.Date</td>
+                            </tr>
+                            <tr>
+                                <td>HORAS DEL SERVICIO</td>
+                                <td style="font-weight: bold;">: 1234 HORAS</td>
+                            </tr>
+                            <tr>
+                                <td>DESCRIPCIÓN DEL SERVICIO</td>
+                                <td style="font-weight: bold;">: @Model.Description</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="accordion" id="accordionExample">
+                    <div class="card card-top">
+                        <div class="card-collapse" id="headingOne">
+                            <h5 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fas fa-chevron-down" style="float: right;font-size: 35px;color: #fc0;"></i>
+                                <button class="btn btn-link" type="button" style="font-size: 16px;color: #fc0;font-weight: bold;">
+                                    Informe Preliminar de Servicio
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <form id="form-inform" method="POST">
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <div class="col-4">
+                                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                <a class="nav-link nav-button nav-border active" style="border-top: 2px solid #31a0ff;" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Antecedentes:</a>
+                                                <a class="nav-link nav-button nav-border" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Trabajos realizados</a>
+                                                <a class="nav-link nav-button nav-border" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Recomendaciones / Observaciones</a>
+                                                <a class="nav-link nav-button nav-border" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Repuestos (Opcional)</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-8 nav-box">
+                                            @if (Model.Report.UrlExe == "" && UserSession.UserType == FESA.SCM.WebSite.Models.UserType.Supervisor) {
+                                                <div class="tab-content nav-text" id="v-pills-tabContent">
+                                                    <i class="fas fa-edit editcomment"></i>
+
+                                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                        @Html.TextArea("Antecedent", Model.Report.Antecedent, 4, 63, new { @class = "form-control" })
+
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                                        @Html.TextArea("Work", Model.Report.Work, 4, 63, new { @class = "form-control" })
+
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                                        @Html.TextArea("Observation", Model.Report.Observation, 4, 63, new { @class = "form-control" })
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                                        @Html.TextArea("Replacement", Model.Report.Replacement, 4, 63, new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                            } else {
+                                                <div class="tab-content nav-text" id="v-pills-tabContent">
+
+                                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                        @Html.TextArea("Antecedent", Model.Report.Antecedent, 4, 63, new { @class = "form-control", @readonly = "readonly" })
+
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                                        @Html.TextArea("Work", Model.Report.Work, 4, 63, new { @class = "form-control", @readonly = "readonly" })
+
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                                        @Html.TextArea("Observation", Model.Report.Observation, 4, 63, new { @class = "form-control", @readonly = "readonly" })
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                                        @Html.TextArea("Replacement", Model.Report.Replacement, 4, 63, new { @class = "form-control", @readonly = "readonly" })
+                                                    </div>
+                                                </div>
+
+                                            }
+                                        </div>
+                                        @if (Model.Report.UrlExe == "" && UserSession.UserType == FESA.SCM.WebSite.Models.UserType.Supervisor) {
+                                            <div class="col-12 mt-35 mb-15" style="text-align: center;">
+                                                <button type="button" class="btn btn-save" data-toggle="modal" data-target="#OTSaveFinalInform">Guardar</button>
+                                                <button type="button" class="btn btn-send" data-toggle="modal" data-target="#OTSendFinalInform">Enviar</button>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card card-top">
+                        <div class="card-collapse" id="headingTwo">
+                            <h5 class="mb-0" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="fas fa-chevron-down" style="float: right;font-size: 35px;color: #fc0;"></i>
+                                <button class="btn btn-link collapsed" style="font-size: 16px;color: #fc0;font-weight: bold;">
+                                    Informe Final
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    @if (UserSession != null) {
+                                        if (UserSession.UserType == FESA.SCM.WebSite.Models.UserType.Supervisor) {
+                                            Html.RenderPartial("_AddInformSupervisor", Model);
+                                        } else if (UserSession.UserType == FESA.SCM.WebSite.Models.UserType.Technician) {
+                                            <div class="reportsot col-12" style="border-right: solid 2px #e6e6e6;">
+                                                <div class="reportsot3 col-md-12">
+                                                    <h4>SOBRE EL TÉCNICO:</h4>
+                                                    <p>Nº Horas trabajadas</p>
+                                                    @if (!Model.Report.Sent1) {
+                                                        if (!Model.Report.Check) {
+                                                                TimeSpan ts = TimeSpan.FromMinutes(Model.Report.TotalMinute);
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label>HORAS:</label>
+                                                                        @Html.TextBox("WorkHourTechnical", TimeSpan.FromMinutes(Model.Report.TotalMinute).Hours, new { @class = "form-control" })
+                                                                        @*<input id="WorkHourTechnical" min="0" type="number" class="form-control" placeholder="">*@
+                                                                        <p class="text-alert" id="ErrorAlertWorkHourTechnical" aria-atomic="true" role="alert"></p>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <label>MINUTOS:</label>
+                                                                        @Html.TextBox("WorkMinuteTechnical", TimeSpan.FromMinutes(Model.Report.TotalMinute).Minutes, new { @class = "form-control" })
+                                                                        @*<input type="number" min="0" class="form-control" id="WorkMinuteTechnical" placeholder="">*@
+                                                                    </div>
+                                                                </div>
+                                                         }
+                                                    } else {
+
+                                                        TimeSpan tst = TimeSpan.FromMinutes(Model.Report.TotalMinute);
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label>HORAS:</label>
+                                                                <input id="WorkHourTechnical" min="0" type="number" class="form-control" placeholder="" readonly value="@tst.Hours">
+                                                                <p class="text-alert" id="ErrorAlertWorkHourTechnical" aria-atomic="true" role="alert"></p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label>MINUTOS:</label>
+                                                                <input type="number" min="0" class="form-control" id="WorkMinuteTechnical" placeholder="" readonly value="@tst.Minutes">
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    }
+
+
+                                                    <div class="upload-btn-wrapper">
+                                                        @if (Model.Report != null && string.IsNullOrEmpty(Model.Report.UrlFile) && !Model.Report.Check) {
+
+                                                            <button id="btnUploadTech" class="btn btn-file">Adjuntar archivo</button>
+                                                            <label for="file-uploadTech" class="custom-file-upload">
+                                                            </label>
+                                                            <input type="file" name="UploadFileTech" id="UploadFileTech" />
+                                                        }
+                                                        @if (Model.Report != null && !string.IsNullOrEmpty(Model.Report.UrlFile)) {
+                                                            string[] arrname = Model.Report.UrlFile.Split("/");
+                                                            string namefile = arrname[arrname.Length - 1];
+                                                            <a href="@Model.Report.UrlFile" class="ot buttonDetail">@namefile</a>
+                                                            @if (!Model.Report.Check && !Model.Report.Sent1) {
+                                                                <label data-toggle="modal" data-target="#OTDeleteFinalInformTechical" style="cursor:pointer" class="fas fa-minus-circle fa-2x"></label>
+                                                            }
+                                                        }
+                                                        <p class="text-alert" id="ErrorAlertUploadFileTech" aria-atomic="true" role="alert"></p>
+                                                    </div>
+                                                    <br />
+                                              
+                                                        @if (!Model.Report.Check) {
+                                                            if (!Model.Report.Sent1) {
+                                                            <label>COMENTARIO DEL TÉCNICO</label>
+                                                            <div class="">
+                                                                @Html.TextArea("Comment1", Model.Report.Comment1, 4, 63, new { @class = "form-control" })
+                                                            </div>
+                                                            <p class="text-alert" id="ErrorAlertComment1" aria-atomic="true" role="alert"></p>
+                                                            }
+                                                        } else {
+                                                            <label> COMENTARIO DEL TÉCNICO</label>
+                                                            <div class="">
+                                                                @Html.TextArea("Comment1", Model.Report.Comment1, 4, 63, new { @class = "form-control", @readonly = "readonly" })
+                                                            </div>
+                                                            <p class="text-alert" id="ErrorAlertComment1" aria-atomic="true" role="alert"></p>
+                                                        }
+                                                    
+
+
+                                                    <div class="row">
+                                                        <p class="time-text">Tiempo de estandar</p>
+                                                        <div class="col-md-6">
+                                                            @{
+                                                                TimeSpan StandarTime1 = TimeSpan.FromMinutes(Convert.ToInt16(Model.Report.TotalMinuteStandard1));
+
+                                                            }
+                                                            <label>HORAS:</label>
+                                                            <div class="box-reportsOT ">@StandarTime1.TotalHours</div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label>MINUTOS:</label>
+                                                            <div class="box-reportsOT ">@StandarTime1.Minutes</div>
+                                                        </div>
+                                                       
+                                                        <p class="time-text">Tiempo de entrega final</p>
+                                                        <div class="col-md-6">
+                                                            <label>HORAS:</label>
+                                                            <div class="box-reportsOT ">
+                                                                @{
+                                                                    if (Model.Report.DeliveryTime1.HasValue) {
+                                                                        TimeSpan nonNullableTS = Model.Report.DeliveryTime1.Value;
+                                                                        @Math.Round(nonNullableTS.TotalHours)
+                                                                    }
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label>MINUTOS:</label>
+                                                            <div class="box-reportsOT ">
+                                                                @{
+                                                                    if (Model.Report.DeliveryTime1.HasValue) {
+                                                                        TimeSpan nonNullableTS = Model.Report.DeliveryTime1.Value;
+                                                                        @nonNullableTS.Minutes
+                                                                    }
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                        @if (Model.Report.Obs1) {
+                                                            <p class="time-text" style="color: #ef4040;">Tiempo de retraso</p>
+                                                            <div class="col-md-6">
+                                                                <label style="color: #ef4040;">HORAS:</label>
+                                                                <div class="box-reportsOT " style="border: 1px solid #ef4040;color: #ef4040;">
+                                                                    @{
+                                                                        if (Model.Report.DelayedTime1.HasValue) {
+                                                                            TimeSpan nonNullableTS = Model.Report.DelayedTime1.Value;
+                                                                            @Math.Round(nonNullableTS.TotalHours)
+                                                                        }
+                                                                    }
+                                      
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <label style="color: #ef4040;">MINUTOS:</label>
+                                                                <div class="box-reportsOT " style="        border: 1px solid #ef4040;
+                                                                color: #ef4040;">
+                                                                    @{
+                                                                        if (Model.Report.DelayedTime1.HasValue) {
+                                                                            TimeSpan nonNullableTS = Model.Report.DelayedTime1.Value;
+                                                                            @nonNullableTS.Minutes
+                                                                        }
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        @if (Model.Report != null && !Model.Report.Check && !Model.Report.Sent1) {
+                                                            <div class="col-12 mt-35 mb-15" style="text-align: center;">
+                                                                <button type="button" class="btn btn-save" onclick="ValidateInformFinal(1);">Guardar</button>
+                                                                @if (!Model.Report.Sent1) {
+                                                                    <button type="button" class="btn btn-send" onclick="ValidateInformFinal(2);">Enviar</button>
+                                                                }
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="OTSendFinalInform" tabindex="-1" role="dialog" aria-labelledby="OTSendFinalInform" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0006.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¿Estas seguro quieres enviar el informe?</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: 0 12px;">Cerrar</button>
+                <button type="button" onclick="ButtonSaveSendForm(2)" class="btn btn-yellow" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTSaveFinalInform" tabindex="-1" role="dialog" aria-labelledby="OTSaveFinalInform" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0006.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¿Estas seguro de guardar el informe?</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: 0 12px;">Cerrar</button>
+                <button type="button" onclick="ButtonSaveSendForm(1)" class="btn btn-yellow" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTExitSave" tabindex="-1" role="dialog" aria-labelledby="OTSave" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0007.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¡Se guardo satisfactoriamente su informe!</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" onclick="redirectToReport();" class="btn btn-yellow" data-dismiss="modal" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTExitSend" tabindex="-1" role="dialog" aria-labelledby="OTSave" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0007.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¡Se envio satisfactoriamente su informe!</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" onclick="redirectToReport();" class="btn btn-yellow" data-dismiss="modal" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTSaveTechnicalInform" tabindex="-1" role="dialog" aria-labelledby="OTSaveTechnicalInform" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0006.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¿Estas seguro quieres guardar el informe final del técnico?</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: 0 12px;">Cerrar</button>
+                <button type="button" onclick="ButtonSaveSendInformTechnical(1)" class="btn btn-yellow" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTSendTechnicalInform" tabindex="-1" role="dialog" aria-labelledby="OTSendTechnicalInform" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0006.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¿Estas seguro quieres enviar el informe final del técnico?</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: 0 12px;">Cerrar</button>
+                <button type="button" onclick="ButtonSaveSendInformTechnical(2)" class="btn btn-yellow" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTSaveSupervisorInform" tabindex="-1" role="dialog" aria-labelledby="OTSaveSupervisorInform" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0006.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¿Estas seguro quieres guardar el informe final del supervisor?</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: 0 12px;">Cerrar</button>
+                <button type="button" onclick="ButtonSaveSendInformTechnicalSupervisor(1)" class="btn btn-yellow" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTSendSupervisorInform" tabindex="-1" role="dialog" aria-labelledby="OTSendSupervisorInform" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0006.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¿Estas seguro quieres enviar el informe final del supervisor?</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: 0 12px;">Cerrar</button>
+                <button type="button" onclick="ButtonSaveSendInformTechnicalSupervisor(2)" class="btn btn-yellow" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OTDeleteFinalInformTechical" tabindex="-1" role="dialog" aria-labelledby="OTDeleteFinalInformTechical" aria-hidden="true" style="padding-right: 17px;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: block;text-align: center;">
+                <img src="/iconos/0006.svg" alt="" style="width: 6rem;margin: 3rem 0 1rem 0;">
+                <h4 style="font-size: 18px;margin: 1rem 0 3rem 0;">¿Estas seguro quieres eliminar el informe?</h4>
+            </div>
+            <div class="modal-footer" style="display: block;text-align: center;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: 0 12px;">Cerrar</button>
+                <button type="button" onclick="DeleteFileFinalInformTechnical()" class="btn btn-yellow" style="margin: 0 12px;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function QuitFileFinalInformTechnical() {
+        $('#divUploadTechnicalFileSupervisor').show();
+        $('#divShowTechnicalFileSupervisor').hide();
+     }
+
+
+    function ButtonSaveSendForm(action) {
+                var model = {
+                    Antecedent: $('#Antecedent').val(),
+                    Observation: $('#Observation').val(),
+                    Work: $('#Work').val(),
+                    Replacement: $('#Replacement').val(),
+                    AssignmentId:'@Model.Id',
+                    Id: '@Model.Report.Id',
+                    ActionType : action
+                };
+                    $.ajax({
+                        url: "/Reports/SaveInform",
+                        method: "POST",
+                        data: JSON.stringify(model),
+                        dataType: "JSON",
+                        contentType: 'application/json',
+                        async: true,
+                        success: function (response) {
+                            if (response.content == "Error") {
+                                window.location.href='@Url.Action("ConsultationReports", "Reports")';
+                            }
+                            $('#OTSaveFinalInform').modal('hide');
+                            $('#OTSendFinalInform').modal('hide');
+                            if (action == 1) {
+                                $('#OTExitSave').modal('show');
+                            } else {
+                                $('#OTExitSend').modal('show');
+                            }
+                        },
+                        beforeSend: function () {
+                            $("body").fadeIn(function () {
+                                $(".loader").show();
+                            });
+                        },
+                        complete: function () {
+                            $(".loader").hide();
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+                        }
+                    });
+    }
+
+    function ValidateInformFinal(action) {
+        var existAttachmentInfort = '@Model.Report.UrlFile'
+        if (existAttachmentInfort == "") {
+            if ($("#UploadFileTech")[0].files.length === 0) {
+                document.getElementById('ErrorAlertUploadFileTech').innerHTML = 'Debe adjuntar un Archivo';
+                return false;
+            }
+        }
+        if ($('#WorkHourTechnical').val().trim() == "") {
+            $('#WorkHourTechnical').val(0)
+        }
+        if ($('#WorkMinuteTechnical').val().trim() == "") {
+            document.getElementById('ErrorAlertWorkHourTechnical').innerHTML = 'Debe Ingresar un valor correcto';
+            return false;
+        }
+       
+        if ($('#Comment1').val().trim() == "") {
+            document.getElementById('ErrorAlertComment1').innerHTML = 'Debe agregar un Comentario';
+            return false;
+        }
+        //if (FileTechnical.size >= 2100000) {
+        //    document.getElementById('ErrorAlertUploadFileTech').innerHTML = 'Debe adjuntar un Archivo menos a 20 megas';
+        //    return false;
+        //}
+        if (action == 1) {
+            $('#OTSaveTechnicalInform').modal('show');
+        } else {
+            $('#OTSendTechnicalInform').modal('show');
+        }
+    }
+
+    $('#UploadFileTech').change(function () {
+        if ($("#UploadFileTech")[0].files.length >= 0) { 
+            var file = $("#UploadFileTech")[0].files[0];
+        }
+       
+        var arrname = file.name.split(".");
+        $(this).prev('label').text("InformeFinal" + '@Model.WorkOrderNumber' + "." + arrname[1]);
+        document.getElementById('ErrorAlertUploadFileTech').innerHTML = '';
+
+    });
+
+    function Back() {
+        window.location ='@Context.Session.GetString("ButtonBack")';
+    }
+    function ButtonSaveSendInformTechnical(action, type) {
+        var existAttachmentInfort = '@Model.Report.UrlFile'
+        var formData = new FormData();
+        var FileTechnical = "";
+        var arrname = [];
+        arrname[1] = "";
+        if (existAttachmentInfort == "") {
+            if ($("#UploadFileTech")[0].files.length >= 0) { 
+            FileTechnical = $("#UploadFileTech")[0].files[0];
+            arrname = FileTechnical.name.split(".");
+            formData.append("FileTechnical", FileTechnical, "InformeFinal" + '@Model.WorkOrderNumber' + "." + arrname[1]);
+            }
+        }
+            formData.append("TotalMinute", parseFloat($('#WorkMinuteTechnical').val()) + parseFloat(($('#WorkHourTechnical').val() * 60)));
+            formData.append("AssignmentId", '@Model.Id');
+            formData.append("Id", '@Model.Report.Id');
+            formData.append("action", action);
+            formData.append("Comment1", $('#Comment1').val().trim());
+            $.ajax({
+                url: "/Reports/UploadTechnicalFile",
+                method: "POST",
+                data: formData,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    
+                    $('#OTSaveTechnicalInform').modal('hide');
+                    $('#OTSendTechnicalInform').modal('hide');
+                    if (action == 1) {
+                        $('#OTExitSave').modal('show');
+                    } else {
+                        $('#OTExitSend').modal('show');
+                    }
+                    if (response.content == "Error") {
+                        window.location.href = '@Url.Action("ReportsOTDetail", "Reports")';
+                    }
+                },
+                beforeSend: function () {
+                    $("body").fadeIn(function () {
+                        $(".loader").show();
+                    });
+                },
+                complete: function () {
+                    $(".loader").hide();
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+
+    }
+
+    $(function() {
+        $("#btnDeleteFileTech").click(function () {
+                 var model = {
+                    Urlfile: '@Model.Report.UrlFile',
+                    AssignmentId:'@Model.Id',
+                    Id : '@Model.Report.Id'
+                };
+                    $.ajax({
+                        url: "/Reports/DeleteTechnicalFile",
+                        method: "POST",
+                        data: JSON.stringify(model),
+                        dataType: "JSON",
+                        contentType: 'application/json',
+                        async: true,
+                        success: function (response) {
+                             if (response.content == "Error") {
+                                window.location.href='@Url.Action("WorkOrder", "OT")';
+                            }
+                            window.location.href='@Url.Action("ReportsOTDetail", "Reports")';
+                        },
+                        beforeSend: function () {
+                            $("body").fadeIn(function () {
+                                $(".loader").show();
+                            });
+                        },
+                        complete: function () {
+                            $(".loader").hide();
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+                        }
+            });
+
+
+
+         })
+    })
+
+    function redirectToReport() {
+        window.location.href='@Url.Action("ReportsOTDetail", "Reports")';
+    }
+
+ 
+    
+
+    function ButtonSaveSendInformTechnicalSupervisor(action) {
+        var valuecheck = "off";
+        
+        if ($("input[name='idcheck']:checked").val() != undefined) {
+            valuecheck = "on";
+        }
+        console.log($("#UploadTechnicalFileSupervisor")[0])
+       $.ajax({
+           url: "/Reports/SaveInfoSupervisor",
+          method: "POST",
+          data: function () {
+              var data = new FormData();
+              var urlfile = '@Model.Report.UrlFile';
+              if (urlfile == "") {
+                  FileTechnical = $("#UploadTechnicalFileSupervisor")[0].files[0];
+                  arrname = FileTechnical.name.split(".");
+                  data.append("FileTechnical", FileTechnical, "InformeFinal" + '@Model.WorkOrderNumber' + "." + arrname[1]);
+             }
+                            data.append("action", action);
+                            data.append("Comment2", $('#Comment2').val().trim());
+                            data.append("Check", valuecheck);
+                            return data;
+                        }(),
+                        dataType: "html",
+                        contentType: false,
+                        processData: false,
+                        async: true,
+                        success: function (response) {
+                             if (response.content == "Error") {
+                                      window.location.href = '@Url.Action("ConsultationReports", "Reports")';
+                                }
+                                $('#OTSaveSupervisorInform').modal('hide');
+                                $('#OTSendSupervisorInform').modal('hide');
+                                if (action == 1) {
+                                    $('#OTExitSave').modal('show');
+                                } else {
+                                    $('#OTExitSend').modal('show');
+                                }
+                            $("#dvListFilesSupervisor").html(result);
+                        },
+                        beforeSend: function () {
+                            $("body").fadeIn(function () {
+                                $(".loader").show();
+                            });
+                        },
+                        complete: function () {
+                            $(".loader").hide();
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+                        }
+          });
+
+    }
+
+   
+
+    function DeleteFileFinalInformTechnical() {
+        var model = {
+                AssignmentId:'@Model.Id',
+                Id: '@Model.Report.Id'
+            };
+                $.ajax({
+                    url: "/Reports/DeleteArchiveInformFinal",
+                    method: "POST",
+                    data: JSON.stringify(model),
+                    dataType: "JSON",
+                    contentType: 'application/json',
+                    async: true,
+                    success: function (response) {
+                        if (response.content == "Error") {
+                            window.location.href='@Url.Action("ConsultationReports", "Reports")';
+                        }
+                        redirectToReport();
+                    },
+                    beforeSend: function () {
+                        $("body").fadeIn(function () {
+                            $(".loader").show();
+                        });
+                    },
+                    complete: function () {
+                        $(".loader").hide();
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+
+
+    }
+
+
+   
+
+</script>

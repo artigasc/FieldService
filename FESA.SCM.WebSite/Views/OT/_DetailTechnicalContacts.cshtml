@@ -1,0 +1,30 @@
+﻿@model List<FESA.SCM.WebSite.Models.ContactModel>
+@{
+    ViewData["Title"] = "_DetailTechnicalContacts";
+}
+<div class="table-client-scroll-y">
+    <table class="tableot1">
+        <thead>
+            <tr>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">TÉLEFONO</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                var FullName = item.Name + " " + item.LastName;
+                <tr>
+                    <td>@FullName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>
+                        @*<a href="" data-toggle="tooltip" title="Contacto cliente que realizó la encuesta."><i class="fas fa-info-circle" style="color: #fc0;font-size: 16px;cursor: pointer;"></i></a>*@
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

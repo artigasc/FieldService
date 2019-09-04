@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="section-login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-md-6 d-none d-md-block img-back"></div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <img class="img-logo mt-50" src="~/images/logo.png" alt="Ferreyros" />
+                <h3 class="mt-50">Sistema de Reportes</h3>
+                
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <form id="form-inform" method="POST">
+                        <div class="input-group mb-2 mt-30">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-user"></i></div>
+                            </div>
+                            <input id="UserName" name="username" type="text" class="form-control UserName" placeholder="Usuario">
+                        </div>
+
+                        <div class="input-group mb-2 mt-30">
+                            @*<div id="loader"></div>*@
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                            </div>
+                            <input id="UserPassword" name="userpassword" type="password" class="form-control UserPassword" placeholder="Contraseña">
+                        </div>
+
+                        <p class="text-alert mb-4 mt-30" id="ErrorAlert" aria-atomic="true" role="alert"></p>
+                        @*<p class="text-right mt-15 mb-15">¿Olvidaste tu contraseña?</p>*@ 
+                        <a id="buttonLogin" class="btn btn-yellow btn-lg btn-block mb-50">INGRESAR</a>
+                        <div class="loaderlogin" style="text-align: center; display: none"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        $(function() {
+            $("#buttonLogin").click(function () {
+                 var model = {
+                 UserName: $('.UserName').val(),
+                 Password: $('.UserPassword').val()
+                };
+                    $.ajax({
+                        url: "/Home/Login",
+                        method: "POST",
+                        data: JSON.stringify(model),
+                        dataType: "JSON",
+                        contentType: 'application/json',
+                        async: true,
+                        success: function (response) {
+                            console.log(response)
+                            if (response.content == null) {
+                                document.getElementById('ErrorAlert').innerHTML = 'Lo siento, tu usuario y/o contraseña fue incorrecta. Por favor, vuelva a verificar.';
+                            }
+                            if (response.content == "error") {
+                                window.location.href = '@Url.Action("Index", "Home")';
+                                
+                            }
+                            if (response.userTypeNumber == "1") {
+                                window.location.href = '@Url.Action("WorkOrder", "OT")';
+
+                            } else if (response.userTypeNumber == "2") {
+                                window.location.href = '@Url.Action("ConsultationReports", "Reports")';
+                            }
+                        },
+                        beforeSend: function () {
+                            $("body").fadeIn(function () {
+                                $(".loaderlogin").show();
+                            });
+                        },
+                        complete: function () {
+                            $(".loaderlogin").hide();
+                            //location.reload();
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+                      
+                        }
+                    });
+
+            })
+    })
+
+</script>

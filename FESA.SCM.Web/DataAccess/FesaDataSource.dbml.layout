@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 19.625" name="FesaDataSource">
+  <DataContextMoniker Name="/FesaDataSourceDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2af07802-eaf9-46fb-b514-0d223fa3b904" absoluteBounds="3.75, 12.5, 2, 4.4631168619791683">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/ASSIGNMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54ed71f7-f49c-410e-b55d-8c846a3c705b" absoluteBounds="3.765, 12.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a79c47fb-b3ea-4d1e-a927-a816ab840df3" absoluteBounds="9.75, 0.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/CONTACT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b34fe5a8-1bea-46fd-8628-0a30d554b719" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="579a302f-af34-4ea9-b4dc-591f6ec4d553" absoluteBounds="0.75, 5.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/COSTCENTER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a04116bf-e51b-4a11-b201-16a2a7d4e13e" absoluteBounds="0.765, 5.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51d3b226-57b2-4cd3-9e7e-d85bd65f50ee" absoluteBounds="9.75, 7.75, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/CUSTOMER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2a8b5696-144b-4ed1-a5e8-37edf375faff" absoluteBounds="9.765, 8.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="456ce15c-0d05-4e30-b187-0d4d86e3e40d" absoluteBounds="6.5, 12.375, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/DOCUMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60467224-a344-47db-98c6-a0878c72be77" absoluteBounds="6.515, 12.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86031c61-1ac2-4753-b715-206b20f19184" absoluteBounds="9.75, 11.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/LOCATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="876c3d55-862e-49f8-a8e4-a2113ec03d27" absoluteBounds="9.765, 12.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e245203d-cc64-4d0e-9f37-96fa624eaee3" absoluteBounds="0.75, 7.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/MACHINERY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b34e925-1afc-40d4-a896-898c016236ca" absoluteBounds="0.765, 8.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a42101a8-c0a1-4930-9458-9df2dbe01410" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/OFFICE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6ceffc7-3c3e-4bff-af8e-3c2c2c41bd49" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5863810e-3621-4d67-a682-20237ee0994f" absoluteBounds="3.5, 4.375, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/ORDER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b864949e-04fb-41d6-b620-85c6428f3b24" absoluteBounds="3.515, 4.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a886ad62-5f5c-48d8-aa48-848ffb8dfb72" absoluteBounds="6.5, 10.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/PERSONNEL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ec21949-6f36-45f5-962a-32ba19e5f24c" absoluteBounds="6.515, 10.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67779763-8435-43d2-a3bc-1c066c48a619" absoluteBounds="3.75, 1, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/ROLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc922f01-16d8-41a3-9b46-95e34793e86b" absoluteBounds="3.765, 1.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="571e4e54-226e-4619-86a0-f2df13cf2c85" absoluteBounds="9.25, 16.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/TRACE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="510f01d6-cb26-4893-922f-fba2700e0f6b" absoluteBounds="9.265, 16.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1b6f2ea-492d-4769-a7f1-d2bd3a1d8917" absoluteBounds="12.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e670718a-3612-4b80-a934-1bf1af5275ad" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6da6feb8-d3b4-4d6e-abfb-e5b533a83622" absoluteBounds="6.5, 3.375, 2, 5.4246240234374987">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/USER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4180bee7-c57a-4f7e-80be-46509d989842" absoluteBounds="6.515, 3.835, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c9ec516-f84e-43e2-b4a9-83fc53b2c2c8" absoluteBounds="9.25, 5.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/USERDETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d3834aa-4c57-4c62-ab2b-db350c9343ab" absoluteBounds="9.265, 5.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 13.7075512695312); (6.5 : 13.7075512695312)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/ASSIGNMENT/ASSIGNMENT_DOCUMENT" />
+      <nodes>
+        <classShapeMoniker Id="2af07802-eaf9-46fb-b514-0d223fa3b904" />
+        <classShapeMoniker Id="456ce15c-0d05-4e30-b187-0d4d86e3e40d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.09699625651042); (3.5 : 6.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/COSTCENTER/COSTCENTER_ORDER" />
+      <nodes>
+        <classShapeMoniker Id="579a302f-af34-4ea9-b4dc-591f6ec4d553" />
+        <classShapeMoniker Id="5863810e-3621-4d67-a682-20237ee0994f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.02085661979167); (4.5 : 9.02085661979167); (4.5 : 7.68430826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/MACHINERY/MACHINERY_ORDER" />
+      <nodes>
+        <classShapeMoniker Id="e245203d-cc64-4d0e-9f37-96fa624eaee3" />
+        <classShapeMoniker Id="5863810e-3621-4d67-a682-20237ee0994f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.58099609375); (3.59375 : 3.58099609375); (3.59375 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/OFFICE/OFFICE_ORDER" />
+      <nodes>
+        <classShapeMoniker Id="a42101a8-c0a1-4930-9458-9df2dbe01410" />
+        <classShapeMoniker Id="5863810e-3621-4d67-a682-20237ee0994f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 12.5); (4.75 : 10.9431469726562); (6.5 : 10.9431469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/ASSIGNMENT/ASSIGNMENT_PERSONNEL" />
+      <nodes>
+        <classShapeMoniker Id="2af07802-eaf9-46fb-b514-0d223fa3b904" />
+        <classShapeMoniker Id="a886ad62-5f5c-48d8-aa48-848ffb8dfb72" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.69399251302083); (3.125 : 7.06899251302083); (3.125 : 9.1746240234375); (6.125 : 9.1746240234375); (6.5 : 8.7996240234375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/COSTCENTER/COSTCENTER_USER" />
+      <nodes>
+        <classShapeMoniker Id="579a302f-af34-4ea9-b4dc-591f6ec4d553" />
+        <classShapeMoniker Id="6da6feb8-d3b4-4d6e-abfb-e5b533a83622" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.82499430338542); (3.51041666666667 : 3.82499430338542 : JumpStart); (3.67708333333333 : 3.82499430338542 : JumpEnd); (6.5 : 3.82499430338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/OFFICE/OFFICE_USER" />
+      <nodes>
+        <classShapeMoniker Id="a42101a8-c0a1-4930-9458-9df2dbe01410" />
+        <classShapeMoniker Id="6da6feb8-d3b4-4d6e-abfb-e5b533a83622" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 1.03125); (6.96875 : 1.03125); (6.96875 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/ROLE/ROLE_USER" />
+      <nodes>
+        <classShapeMoniker Id="67779763-8435-43d2-a3bc-1c066c48a619" />
+        <classShapeMoniker Id="6da6feb8-d3b4-4d6e-abfb-e5b533a83622" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 6.10500325520833); (9.25 : 6.10500325520833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/USER/USER_USERDETAIL" />
+      <nodes>
+        <classShapeMoniker Id="6da6feb8-d3b4-4d6e-abfb-e5b533a83622" />
+        <classShapeMoniker Id="7c9ec516-f84e-43e2-b4a9-83fc53b2c2c8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="62437a5d-8f28-4e9c-a7a3-e99044bf0b0f" absoluteBounds="6.375, 15.625, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/FesaDataSourceDataContext/ACTIVITY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5bc6609-92bb-4df2-9b7a-1ce3a9c4dddc" absoluteBounds="6.39, 16.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.375 : 17.4815991210938); (9.25 : 17.4815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/ACTIVITY/ACTIVITY_TRACE" />
+      <nodes>
+        <classShapeMoniker Id="62437a5d-8f28-4e9c-a7a3-e99044bf0b0f" />
+        <classShapeMoniker Id="571e4e54-226e-4619-86a0-f2df13cf2c85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 16.2940584309896); (6.375 : 16.2940584309896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FesaDataSourceDataContext/ASSIGNMENT/ASSIGNMENT_ACTIVITY" />
+      <nodes>
+        <classShapeMoniker Id="2af07802-eaf9-46fb-b514-0d223fa3b904" />
+        <classShapeMoniker Id="62437a5d-8f28-4e9c-a7a3-e99044bf0b0f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,375 @@
+﻿@using Microsoft.AspNetCore.Http
+@model List<FESA.SCM.WebSite.Models.AssignmentModel>
+@{
+    ViewData["Title"] = "_WorkOrderList";
+}
+
+
+@if (Model.Count() > 0)
+{
+    <section class="workorders">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" data-toggle="modal" data-target="#filter" style="float: right;margin-top: 2.5rem;width: 7rem;" class="btn btn-yellow">Filtrar</button>
+                    <h3 class="mt-40 mb-40">Ordenes de Trabajo</h3>
+                    <table class="tableprimary table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            OT
+                                        </div>
+
+                                        <div class="dropdown-menu " aria-labelledby="clientsearch">
+                                            <div class="ropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="OTFilter" name="OTFilter" type="text" class="form-control" placeholder="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="submit" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            CLIENTE
+                                        </div>
+
+                                        <div class="dropdown-menu " aria-labelledby="clientsearch">
+                                            <div class="ropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="ClientFilter" name="ClientFilter" type="text" class="form-control" placeholder="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="submit" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">MODELO</th>
+                                <th scope="col">SERIE</th>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            FECHA INICIO
+                                        </div>
+
+                                        <div class="dropdown-menu " aria-labelledby="clientsearch" style="width: 200%;">
+                                            <div class="dropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="StartDateFilter" name="StartDateFilter" type="date" placeholder="mm/dd/yyyy" value="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="submit" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            FECHA FIN
+                                        </div>
+                                        <div class="dropdown-menu " aria-labelledby="clientsearch" style="width: 200%;">
+                                            <div class="ropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="EndDateFilter" name="EndDateFilter" type="date" placeholder="mm/dd/yyyy">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="submit" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">SUPERVISOR</th>
+                                <th scope="col">TÉCNICO</th>
+                                <th scope="col">ESTADO TÉCNICO</th>
+                                <th scope="col">SATISFACIÓN <br />DEL CLIENTE</th>
+                                <th scope="col">ESTADO OT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th class="p-3">
+                                        <label onclick="SendValuesDetailOT('@item.Id')" class="ot text-ot buttonDetail" style="text-decoration: underline; cursor: pointer;">@item.WorkOrderNumber</label>
+                                        @*<a href="" class="ot buttonDetail" onclick="SendValuesDetailOT('@item.Id')">@item.WorkOrderNumber</a>*@
+                                    </th>
+                                    <th class="p-3">@item.CompanyName</th>
+                                    <th class="px-2">@item.Machine.Model</th>
+                                    <th class="px-2">@item.Machine.SerialNumber</th>
+                                    <th class="px-2">@item.StartDate.ToString("dd/MM/yyyy")</th>
+                                    <th class="px-2">@item.EndDate.ToString("dd/MM/yyyy")</th>
+                                    <th class="p-3">
+                                        @foreach (var pers in item.FerreyrosContacts)
+                                        {
+                                            var FullName = "";
+                                            if (pers.Charge == "Supervisor")
+                                            {
+                                                FullName = pers.Name + " " + pers.LastName;
+                                                @FullName
+                                            }
+
+                                        }
+                                    </th>
+                                    <th style="text-align: left;">
+
+                                        @if (item.FerreyrosContacts.Count > 1)
+                                        {
+                                            <ul class="tec">
+                                                @foreach (var pers in item.FerreyrosContacts)
+                                                {
+                                                    var FullName = "";
+                                                    if (pers.Charge == "Líder")
+                                                    {
+                                                        FullName = pers.Name + " " + pers.LastName;
+                                                        <li>
+                                                            <label onclick="SendValuesDetailTechnical('@item.Id','@pers.Id')" class="text-technical">@FullName</label>
+                                                            <img class="icono" src="/iconos/0001.svg">
+                                                        </li>
+                                                    }
+                                                    else if (pers.Charge != "Supervisor")
+                                                    {
+                                                        FullName = pers.Name + " " + pers.LastName;
+                                                        <li>
+                                                            <label onclick="SendValuesDetailTechnical('@item.Id','@pers.Id')" class="text-technical">@FullName</label>
+                                                            @*<a href="" onclick="SendValuesDetailTechnical('@item.Id','@pers.Id')">@FullName</a>*@
+                                                            @*@Html.ActionLink(@FullName, "TechnicalDetail", "OT", new { WorkOrderNumber = item.WorkOrderNumber, IdTecnichal = pers.Id })*@
+
+                                                        </li>
+                                                    }
+                                                }
+                                            </ul>
+                                        }
+
+                                        @if (item.FerreyrosContacts.Count == 1)
+                                        {
+
+                                            var FullName = item.FerreyrosContacts[0].Name + " " + item.FerreyrosContacts[0].LastName;
+                                            <p class="tec" style="margin:0;">
+                                                <label onclick="SendValuesDetailTechnical('@item.Id','@item.FerreyrosContacts[0].Id')" class="text-technical">@FullName</label>
+                                                @*@Html.ActionLink(@FullName, "TechnicalDetail", "OT", new { WorkOrderNumber = item.WorkOrderNumber, IdTecnichal = item.FerreyrosContacts[0].Id })*@
+                                            </p>
+                                        }
+                                    </th>
+                                    <th class="px-2">
+                                        <ul>
+                                            @foreach (var pers in item.FerreyrosContacts)
+                                            {
+                                                if (pers.Charge != "Supervisor")
+                                                {
+                                                    if (pers.assignmentStatus == FESA.SCM.WebSite.Models.ContactStatus.InProcess)
+                                                    {
+                                                        <li>
+                                                            @FESA.SCM.WebSite.Models.ConvertContactStatus.GetStatusSPA(pers.assignmentStatus)
+                                                            <div class="circle InProcess"></div>
+                                                        </li>
+                                                    }
+                                                    else if (pers.assignmentStatus == FESA.SCM.WebSite.Models.ContactStatus.Assigned)
+                                                    {
+                                                        <li>
+                                                            @FESA.SCM.WebSite.Models.ConvertContactStatus.GetStatusSPA(pers.assignmentStatus)
+                                                            <div class="circle Assigned"></div>
+                                                        </li>
+                                                    }
+                                                    else if (pers.assignmentStatus == FESA.SCM.WebSite.Models.ContactStatus.Completed)
+                                                    {
+                                                        <li>
+                                                            @FESA.SCM.WebSite.Models.ConvertContactStatus.GetStatusSPA(pers.assignmentStatus)
+                                                            <div class="circle Completed"></div>
+                                                        </li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li>
+                                                            @FESA.SCM.WebSite.Models.ConvertContactStatus.GetStatusSPA(pers.assignmentStatus)
+                                                            <div class="circle"></div>
+                                                        </li>
+                                                    }
+                                                }
+                                            }
+                                        </ul>
+                                    </th>
+                                    <th>@item.Rating</th>
+
+                                    <th>
+                                        @if (item.Status == FESA.SCM.WebSite.Models.AssignmentStatus.Assigned)
+                                        {
+                                            <button class="btn btn-sm btn-assigned">@FESA.SCM.WebSite.Models.ConvertAssignmentStatus.GetStatusSPA(item.Status)</button>
+                                        }
+
+                                        else if (item.Status == FESA.SCM.WebSite.Models.AssignmentStatus.Active)
+                                        {
+                                            <button class="btn btn-sm btn-inprogress">@FESA.SCM.WebSite.Models.ConvertAssignmentStatus.GetStatusSPA(item.Status)</button>
+                                        }
+
+                                        else if (item.Status == FESA.SCM.WebSite.Models.AssignmentStatus.StandBy)
+                                        {
+                                            <button class="btn btn-sm btn-standby">@FESA.SCM.WebSite.Models.ConvertAssignmentStatus.GetStatusSPA(item.Status)</button>
+                                        }
+
+                                        else
+                                        {
+                                            <button class="btn btn-sm btn-finalized">@FESA.SCM.WebSite.Models.ConvertAssignmentStatus.GetStatusSPA(item.Status)</button>
+
+                                        }
+
+                                    </th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid">
+        <nav aria-label="Page navigation pagination">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+                @{ int pag = Convert.ToInt32(ViewData["Pages"]);
+                    int current = Convert.ToInt32(ViewData["CurrentPage"]);
+                }
+                @for (int i = 1; i <= pag; i++)
+                {
+                    if (i == current)
+                    {
+                        <li class="page-item active"><a class="page-link" href="@($"/OT/WorkOrder?page={i}")">@(i)</a></li>
+
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" href="@($"/OT/WorkOrder?page={i}")">@(i)</a></li>
+                    }
+
+                }
+                <li class="page-item">
+                    <a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+}
+else
+{
+
+    <section class="workorders">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" data-toggle="modal" data-target="#filter" style="float: right;margin-top: 2.5rem;width: 7rem;" class="btn btn-yellow">Filtrar</button>
+                    <h3 class="mt-40 mb-40">Ordenes de Trabajo</h3>
+                    <table class="tableprimary table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            OT
+                                        </div>
+
+                                        <div class="dropdown-menu " aria-labelledby="clientsearch">
+                                            <div class="ropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="OTFilter" name="OTFilter" type="text" class="form-control" placeholder="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="button" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            CLIENTE
+                                        </div>
+
+                                        <div class="dropdown-menu " aria-labelledby="clientsearch">
+                                            <div class="ropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="ClientFilter" name="ClientFilter" type="text" class="form-control" placeholder="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="button" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">MODELO</th>
+                                <th scope="col">SERIE</th>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            FECHA INICIO
+                                        </div>
+
+                                        <div class="dropdown-menu " aria-labelledby="clientsearch" style="width: 200%;">
+                                            <div class="dropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="StartDateFilter" name="StartDateFilter" type="date" placeholder="mm/dd/yyyy" value="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="button" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle" type="" id="clientsearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            FECHA FIN
+                                        </div>
+                                        <div class="dropdown-menu" aria-labelledby="clientsearch" style="width: 200%;">
+                                            <div class="ropdown-menu input-group" aria-labelledby="clientsearch" style="width: 150%;">
+                                                <input id="EndDateFilter" name="EndDateFilter" type="date" placeholder="mm/dd/yyyy">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-yellow" type="button" onclick="ajax();">Buscar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="col">SUPERVISOR</th>
+                                <th scope="col">TÉCNICO</th>
+                                <th scope="col">ESTADO TÉCNICO</th>
+                                <th scope="col">SATISFACIÓN <br />DEL CLIENTE</th>
+                                <th scope="col">ESTADO OT</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <h4 style="font-size: 30px; margin: 5rem; text-align: center; color: #1d1d1e;">No se encontraron  Órdenes de Trabajo asignadas</h4>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+
+<script>
+    $('#OTFilter').keyup(function (event) {
+        $('#WorkOrderNumber').val($('#OTFilter').val())
+    });
+    $('#ClientFilter').keyup(function (event) {
+        $('#Client').val($('#ClientFilter').val());
+    });
+    $('#StartDateFilter').keyup(function (event) {
+        $('#StartDate').val($('#StartDateFilter').val())
+    });
+    $('#EndDateFilter').keyup(function (event) {
+        $('#EndDate').val($('#EndDateFilter').val())
+    });
+    $('#OTFilter').val('@Context.Session.GetString("OTFilter")');
+    $('#ClientFilter').val('@Context.Session.GetString("ClientFilter")');
+    $('#StartDateFilter').val('@Context.Session.GetString("StartDateFilter")');
+    $('#EndDateFilter').val('@Context.Session.GetString("EndDateFilter")');
+    $('#WorkOrderNumber').val($('#OTFilter').val())
+    $('#Client').val($('#ClientFilter').val());
+    $('#StartDate').val($('#StartDateFilter').val())
+    $('#EndDate').val($('#EndDateFilter').val())
+</script>
+

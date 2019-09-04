@@ -1,0 +1,23 @@
+﻿/* Calendar */
+
+#Scheduler{
+    width: 957px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+#Scheduler > :nth-child(1) > :nth-child(1) > :nth-child(2) {
+    display: none!important;
+}
+/*#Scheduler > :nth-child(3) > :nth-child(3) > :nth-child(1) > :nth-child(2) div {
+    background: #AD2109!important;
+}
+#Scheduler > :nth-child(3) > :nth-child(3) > :nth-child(1) > :nth-child(10)  {
+    background: #AD2109!important;
+}*/
+#Scheduler > :nth-child(1) > :nth-child(3) > table > tbody > tr > td > div{
+    padding-top: 12%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

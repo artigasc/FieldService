@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\ProjectsPerson\\Personales\\FESA.SCM-DEV\\FESA.SCM-DEV\\FESA.SCM.WebSite\\FESA.SCM.WebSite.csproj": {}
+  },
+  "projects": {
+    "C:\\ProjectsPerson\\Personales\\FESA.SCM-DEV\\FESA.SCM-DEV\\FESA.SCM.WebSite\\FESA.SCM.WebSite.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\ProjectsPerson\\Personales\\FESA.SCM-DEV\\FESA.SCM-DEV\\FESA.SCM.WebSite\\FESA.SCM.WebSite.csproj",
+        "projectName": "FESA.SCM.WebSite",
+        "projectPath": "C:\\ProjectsPerson\\Personales\\FESA.SCM-DEV\\FESA.SCM-DEV\\FESA.SCM.WebSite\\FESA.SCM.WebSite.csproj",
+        "packagesPath": "C:\\Users\\Analista\\.nuget\\packages\\",
+        "outputPath": "C:\\ProjectsPerson\\Personales\\FESA.SCM-DEV\\FESA.SCM-DEV\\FESA.SCM.WebSite\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Analista\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.0": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.6, )"
+            },
+            "Microsoft.AspNetCore.All": {
+              "target": "Package",
+              "version": "[2.0.8, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[3.2.5, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

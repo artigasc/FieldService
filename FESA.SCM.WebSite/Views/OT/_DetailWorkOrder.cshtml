@@ -1,0 +1,213 @@
+﻿@model FESA.SCM.WebSite.Models.AssignmentModel
+@{
+    ViewData["Title"] = "_DetailWorkOrder";
+}
+
+<section class="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="mt-30 return">
+                    <a href="WorkOrder"><i class="fas fa-arrow-left"></i> Regresar</a>
+                </span>
+                <h3 class="mb-30">Orden de Trabajo</h3>
+            </div>
+            <div class="detailot col-md-4">
+                <div class="detailotcol1 col-md-12">
+                    <h4>Orden de Trabajo @Model.WorkOrderNumber</h4>
+                    <button class="btn btn-sm btn-assigned">En curso</button>
+                    <hr />
+                    <h5>Datos del servicio</h5>
+
+                    <label>CLIENTE</label>
+                    <div class="boxlg">@Model.CompanyName</div>
+
+                    <label>DETALLE</label>
+                    <div class="boxlg" style="max-height: 5rem; min-height:3rem; overflow-y: auto !important;">@Model.Description</div>
+
+                    <label>FECHA DE SOLICITUD CLIENTE:</label>
+                    <div class="boxlg">@Model.RequestDate.ToString("dd/MM/yyyy")</div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>FECHA INICIO ESTIMADA:</label>
+                            <div class="boxlg">@Model.EstimatedStartDate.ToString("dd/MM/yyyy")</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>FECHA INICIO FIN:</label>
+                            <div class="boxlg">@Model.EstimatedEndDate.ToString("dd/MM/yyyy")</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>FECHA INICIO:</label>
+                            <div class="boxlg">@Model.StartDate.ToString("dd/MM/yyyy")</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>FECHA FIN:</label>
+                            <div class="boxlg">@Model.EndDate.ToString("dd/MM/yyyy")</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="detailot col-md-8">
+                        <div class="detailotcol2 col-md-12" style="position: relative;text-align: center;">
+                            <i class="fas fa-plus-circle" data-toggle="modal" data-target="#NewContact" style="text-align: center; cursor: pointer; position: absolute;border-top-width: 0px;border-top-style: solid;top: 0px;line-height: 0;font-size: 34px;color: #31a0ff;"></i>
+                            <h5 style="text-align: left;">Contactos cliente</h5>
+                            <hr>
+                            <div id="dvTechnicalsContacts">
+                                @{Html.RenderPartial("_DetailTechnicalContacts", Model.TechnicalContacts);}
+                            </div>
+                        </div>
+                        <br />
+                        <div class="detailotcol2 col-md-12">
+                            <h5>Lugar de la opreación</h5>
+                            <hr />
+                            <table class="tableot1">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">UBICACIÓN</th>
+                                        <th scope="col">DEPARTAMENTO</th>
+                                        <th scope="col">PROVINCIA</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>@Model.Location.place</td>
+                                        <td>@Model.Location.Department</td>
+                                        <td>@Model.Location.Province</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+
+                    <div class="detailot col-md-4" style="background-color: #fff;">
+                        <div class="detailotcol3 col-lg-12">
+                            <h5>Datos del servicio</h5>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>NÚMERO SERIAL:</label>
+                                    <div class="boxlg">
+                                        @if (Model.Machine != null) {
+                                            @Model.Machine.SerialNumber
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>MARCA:</label>
+                                    <div class="boxlg">
+                                        @if (Model.Machine != null) {
+                                            @Model.Machine.Brand
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>MODELO:</label>
+                                    <div class="boxlg">
+                                        @if (Model.Machine != null) {
+                                            @Model.Machine.Model
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>HORA DE VIDA ÚTIL:</label>
+                                    <div class="boxlg">
+                                        @if (Model.Machine != null) {
+                                            @Model.Machine.lifeHours
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailot col-md-12">
+                        <br />
+                        <div class="detailotcol2 col-md-12">
+                            <h5>Equipo Ferryros</h5>
+                            <hr />
+                            <div class="table-team-scroll-y">
+                                <table class="tableot1">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">NOMBRE DEL EQUIPO</th>
+                                            <th scope="col">EMAIL DEL EQUIPO</th>
+                                            <th scope="col">TELÉFONO DEL EQUIPO</th>
+                                            <th scope="col">RANGO DEL EQUIPO</th>
+                                            <th scope="col">INFORMES</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model.FerreyrosContacts != null)
+                                        {
+                                            @foreach (var item in Model.FerreyrosContacts)
+                                            {
+                                                var FullName = item.Name + " " + item.LastName;
+
+                                                <tr>
+                                                    <td>@FullName</td>
+                                                    <td>@item.Email</td>
+                                                    <td>@item.Phone</td>
+                                                    <td>@item.Charge</td>
+                                                    <td>
+                                                        @if (item.Charge == "Líder") {
+                                                        <label onclick="SendValuesShowDetail()" class="btn btn-sm btn-details" style="cursor: pointer;">Ver detalle</label>
+                                                            @*<a href="ReportsOT" onclick="SendValuesShowDetail()" class="btn btn-sm btn-details">Ver detalle</a>*@
+                                                        }
+                                                    </td>
+                                                </tr>
+
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function SendValuesShowDetail() {
+        var params = {
+            AssignmentId: '@Model.Id'
+        };
+        $.ajax({
+            url: "/OT/OTDetailReport",
+            method: "POST",
+            data: params,
+            dataType: 'json',
+            async: true,
+            success: function (response) {
+                window.location ='@Url.Action("ShowDetailByTechnical", "OT")';
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".loader").show();
+                });
+            },
+            complete: function () {
+                $(".loader").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+                alert("Ha ocurrido un error, por favor comuníquese con el administrador")
+            }
+        });
+
+    }
+
+    </script>
+

@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="fesaprod" Class="FesaDataSourceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=dbfesa.database.windows.net;Initial Catalog=fesaprod;User ID=ferreyros" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="fesaprodConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ASSIGNMENT" Member="ASSIGNMENTs">
+    <Type Name="ASSIGNMENT">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WORKORDERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="LOCATIONID" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CIAID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="REQUESTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="ASSIGNMENTSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASSIGNMENTTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUESTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTIMATEDSTARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTIMATEDENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ASSIGNMENT_DOCUMENT" Member="DOCUMENTs" ThisKey="ID" OtherKey="ASSIGNMENTID" Type="DOCUMENT" />
+      <Association Name="ASSIGNMENT_PERSONNEL" Member="PERSONNELs" ThisKey="ID" OtherKey="ASSIGNMENTID" Type="PERSONNEL" />
+      <Association Name="ASSIGNMENT_ACTIVITY" Member="ACTIVITies" ThisKey="ID" OtherKey="ASSIGNMENTID" Type="ACTIVITY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTACT" Member="CONTACTs">
+    <Type Name="CONTACT">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CONTACTID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LASTNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CHARGE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COSTCENTER" Member="COSTCENTERs">
+    <Type Name="COSTCENTER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="COSTCENTER_ORDER" Member="ORDERs" ThisKey="ID" OtherKey="COSTCENTERID" Type="ORDER" />
+      <Association Name="COSTCENTER_USER" Member="USERs" ThisKey="ID" OtherKey="COSTCENTERID" Type="USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="BUSINESSNAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RUC" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DOCUMENT" Member="DOCUMENTs">
+    <Type Name="DOCUMENT">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USERID" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ASSIGNMENT_DOCUMENT" Member="ASSIGNMENT" ThisKey="ASSIGNMENTID" OtherKey="ID" Type="ASSIGNMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOCATION" Member="LOCATIONs">
+    <Type Name="LOCATION">
+      <Column Name="ID" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DISTRICT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROVINCE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UBICACION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MACHINERY" Member="MACHINERies">
+    <Type Name="MACHINERY">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BRAND" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODEL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SERIALNUMBER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LIFEHOURS" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="MACHINERY_ORDER" Member="ORDERs" ThisKey="ID" OtherKey="MACHINERYID" Type="ORDER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OFFICE" Member="OFFICEs">
+    <Type Name="OFFICE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="OFFICE_ORDER" Member="ORDERs" ThisKey="ID" OtherKey="OFFICEID" Type="ORDER" />
+      <Association Name="OFFICE_USER" Member="USERs" ThisKey="ID" OtherKey="OFFICEID" Type="USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[ORDER]" Member="ORDERs">
+    <Type Name="ORDER" Id="ID1">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CONTACTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="CUSTOMERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="MACHINERYID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OFFICEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COSTCENTERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="COSTCENTER_ORDER" Member="COSTCENTER" ThisKey="COSTCENTERID" OtherKey="ID" Type="COSTCENTER" IsForeignKey="true" />
+      <Association Name="MACHINERY_ORDER" Member="MACHINERY" ThisKey="MACHINERYID" OtherKey="ID" Type="MACHINERY" IsForeignKey="true" />
+      <Association Name="OFFICE_ORDER" Member="OFFICE" ThisKey="OFFICEID" OtherKey="ID" Type="OFFICE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSONNEL" Member="PERSONNELs">
+    <Type Name="PERSONNEL">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PERSONNELTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ASSIGNMENT_PERSONNEL" Member="ASSIGNMENT" ThisKey="ASSIGNMENTID" OtherKey="ID" Type="ASSIGNMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROLE" Member="ROLEs">
+    <Type Name="ROLE">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ROLE_USER" Member="USERs" ThisKey="ID" OtherKey="ROLEID" Type="USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRACE" Member="TRACEs">
+    <Type Name="TRACE">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACTIVITYID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="LATITUDE" Type="System.Decimal" DbType="Decimal(16,14)" CanBeNull="true" />
+      <Column Name="LONGITUDE" Type="System.Decimal" DbType="Decimal(16,14)" CanBeNull="true" />
+      <Column Name="ACTIVITYSTATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRACEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ACTIVITY_TRACE" Member="ACTIVITY" ThisKey="ACTIVITYID" OtherKey="ID" Type="ACTIVITY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TYPES" Member="TYPEs">
+    <Type Name="TYPE">
+      <Column Name="[TABLE]" Member="TABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[COLUMN]" Member="COLUMN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VALUE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[USER]" Member="USERs">
+    <Type Name="USER">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FESAUSERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PNS" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="PHOTO" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="USERTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USERSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROLEID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="HASCHANGEDPASSWORD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SESSIONSTARTED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OFFICEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COSTCENTERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISLEAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CELULLAR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RPM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="USER_USERDETAIL" Member="USERDETAILs" ThisKey="ID" OtherKey="USERID" Type="USERDETAIL" />
+      <Association Name="COSTCENTER_USER" Member="COSTCENTER" ThisKey="COSTCENTERID" OtherKey="ID" Type="COSTCENTER" IsForeignKey="true" />
+      <Association Name="OFFICE_USER" Member="OFFICE" ThisKey="OFFICEID" OtherKey="ID" Type="OFFICE" IsForeignKey="true" />
+      <Association Name="ROLE_USER" Member="ROLE" ThisKey="ROLEID" OtherKey="ID" Type="ROLE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USERDETAILS" Member="USERDETAILs">
+    <Type Name="USERDETAIL">
+      <Column Name="USERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="USERSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ORDERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Association Name="USER_USERDETAIL" Member="USER" ThisKey="USERID" OtherKey="ID" Type="USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACTIVITY" Member="ACTIVITies">
+    <Type Name="ACTIVITY">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USERID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="ACTIVITYTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVITYSTATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DURATION" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DURATIONSTR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="ACTIVITY_TRACE" Member="TRACEs" ThisKey="ID" OtherKey="ACTIVITYID" Type="TRACE" />
+      <Association Name="ASSIGNMENT_ACTIVITY" Member="ASSIGNMENT" ThisKey="ASSIGNMENTID" OtherKey="ID" Type="ASSIGNMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GET_ALL_ACTIVITIES_SP" Method="GET_ALL_ACTIVITIES_SP">
+    <Parameter Name="OFFICE" Parameter="oFFICE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="COSTCENTER" Parameter="cOSTCENTER" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FECHAINICIO" Parameter="fECHAINICIO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FECHAFIN" Parameter="fECHAFIN" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="GET_ALL_ACTIVITIES_SPResult">
+      <Column Name="ID_ORDER" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION_ORDER" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="ID_CUSTOMER" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ID_ACTIVITY" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION_ACTIVITY" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ACTIVITYTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ASSIGNMENT" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTIMATEDSTARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTIMATEDENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ID_USER" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_ALL_COSTCENTER" Method="GET_ALL_COSTCENTER">
+    <ElementType Name="GET_ALL_COSTCENTERResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTIONC" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_ALL_ORDERS_SP" Method="GET_ALL_ORDERS_SP">
+    <ElementType Name="GET_ALL_ORDERS_SPResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MACHINERYID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="CONTACTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_ALL_OFFICE" Method="GET_ALL_OFFICE">
+    <ElementType Name="GET_ALL_OFFICEResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DESCR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_ALL_ORDERS_BY_CUSTOMERID_SP" Method="GET_ALL_ORDERS_BY_CUSTOMERID_SP">
+    <Parameter Name="CUSTOMERID" Parameter="cUSTOMERID" Type="System.String" DbType="VarChar(36)" />
+    <Parameter Name="SUPERVISORID" Parameter="sUPERVISORID" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_ALL_ORDERS_BY_CUSTOMERID_SPResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_ASSIGNMENTDETAILS_SP" Method="GET_ASSIGNMENTDETAILS_SP">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_ASSIGNMENTDETAILS_SPResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="WORKORDERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="LOCATIONID" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CIAID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="REQUESTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="ASSIGNMENTSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASSIGNMENTTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUESTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTIMATEDSTARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTIMATEDENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTMODIFICATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DISTRICT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROVINCE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SERIALNUMBER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BRAND" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODEL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LIFEHOURS" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_CONTACTDETAILS_SP" Method="GET_CONTACTDETAILS_SP">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_CONTACTDETAILS_SPResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMERID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_DOCUMENT_BY_NAME_SP" Method="GET_DOCUMENT_BY_NAME_SP">
+    <Parameter Name="ORDERID" Parameter="oRDERID" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_DOCUMENT_BY_NAME_SPResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="USERID" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_PERSONNEL_BY_ASSIGNMENT_SP" Method="GET_PERSONNEL_BY_ASSIGNMENT_SP">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_PERSONNEL_BY_ASSIGNMENT_SPResult">
+      <Column Name="NAMEPERSONNEL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="USERTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USERSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASSIGNMENTSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="PERSONNELID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_PERSONNELDETAILS_SP" Method="GET_PERSONNELDETAILS_SP">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_PERSONNELDETAILS_SPResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_GET_ALL_ORDER_PAGINATE_P" Method="SP_GET_ALL_ORDER_PAGINATE_P">
+    <Parameter Name="PAGEINDEX" Parameter="pAGEINDEX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PAGESIZE" Parameter="pAGESIZE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TOTALROWS" Parameter="tOTALROWS" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.SP_GET_ORDER_PAGINATE" Method="SP_GET_ORDER_PAGINATE">
+    <Parameter Name="SEARCHBYORDERCODE" Parameter="sEARCHBYORDERCODE" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="SEARCHBYCENTRO" Parameter="sEARCHBYCENTRO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SEARCHBYOFICINA" Parameter="sEARCHBYOFICINA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PAGEINDEX" Parameter="pAGEINDEX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PAGESIZE" Parameter="pAGESIZE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TOTALROWS" Parameter="tOTALROWS" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.GET_ACTIVITY_BY_PERSONNELID_SP" Method="GET_ACTIVITY_BY_PERSONNELID_SP">
+    <Parameter Name="ASSIGNMENTID" Parameter="aSSIGNMENTID" Type="System.String" DbType="VarChar(36)" />
+    <Parameter Name="USERID" Parameter="uSERID" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_ACTIVITY_BY_PERSONNELID_SPResult">
+      <Column Name="ACTIVITYID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIVITYTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDACTIVITY" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="USERID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="ACTIVITYTYPE1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DURATIONSTR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DURATION" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NAMECLIENT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NAMEPERSONNEL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ISLEAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVITYSTATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="LATITUDE" Type="System.Decimal" DbType="Decimal(16,14)" CanBeNull="true" />
+      <Column Name="LONGITUDE" Type="System.Decimal" DbType="Decimal(16,14)" CanBeNull="true" />
+      <Column Name="UBICATION" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_ACTIVITY_BY_PERSONNELID_ACTIVITYSTATE_END_SP" Method="GET_ACTIVITY_BY_PERSONNELID_ACTIVITYSTATE_END_SP">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(36)" />
+    <ElementType Name="GET_ACTIVITY_BY_PERSONNELID_ACTIVITYSTATE_END_SPResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+      <Column Name="ASSIGNMENTID" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="ACTIVITYSTATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID1" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="LATITUDE" Type="System.Decimal" DbType="Decimal(16,14)" CanBeNull="true" />
+      <Column Name="LONGITUDE" Type="System.Decimal" DbType="Decimal(16,14)" CanBeNull="true" />
+      <Column Name="UBICATIONINI" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="UBICATIONEND" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

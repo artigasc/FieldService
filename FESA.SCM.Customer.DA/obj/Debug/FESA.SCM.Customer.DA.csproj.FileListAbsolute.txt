@@ -1,0 +1,17 @@
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\FESA.SCM.Customer.DA.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\FESA.SCM.Customer.DA.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\FESA.SCM.Common.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\FESA.SCM.Customer.BE.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\Microsoft.Practices.Unity.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\FESA.SCM.Common.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\bin\Debug\FESA.SCM.Customer.BE.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\obj\Debug\FESA.SCM.Customer.DA.csprojAssemblyReference.cache
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\obj\Debug\FESA.SCM.Customer.DA.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\obj\Debug\FESA.SCM.Customer.DA.csproj.CopyComplete
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\obj\Debug\FESA.SCM.Customer.DA.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.Customer.DA\obj\Debug\FESA.SCM.Customer.DA.pdb

@@ -1,0 +1,11 @@
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\bin\Debug\netcoreapp2.0\Solution.Ferreyros.deps.json
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\bin\Debug\netcoreapp2.0\Solution.Ferreyros.runtimeconfig.json
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\bin\Debug\netcoreapp2.0\Solution.Ferreyros.runtimeconfig.dev.json
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\bin\Debug\netcoreapp2.0\Solution.Ferreyros.dll
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\bin\Debug\netcoreapp2.0\Solution.Ferreyros.pdb
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\obj\Debug\netcoreapp2.0\Solution.Ferreyros.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\obj\Debug\netcoreapp2.0\Solution.Ferreyros.AssemblyInfoInputs.cache
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\obj\Debug\netcoreapp2.0\Solution.Ferreyros.AssemblyInfo.cs
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\obj\Debug\netcoreapp2.0\Solution.Ferreyros.dll
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\obj\Debug\netcoreapp2.0\Solution.Ferreyros.pdb
+C:\PROYECTOS\FERREYROS\Solution.Ferreyros\Solution.Ferreyros\obj\Debug\netcoreapp2.0\Solution.Ferreyros.csprojAssemblyReference.cache

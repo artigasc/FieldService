@@ -1,0 +1,16 @@
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\FESA.SCM.WebSite.deps.json
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\FESA.SCM.WebSite.runtimeconfig.json
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\FESA.SCM.WebSite.runtimeconfig.dev.json
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\FESA.SCM.WebSite.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\FESA.SCM.WebSite.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\FESA.SCM.WebSite.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\FESA.SCM.WebSite.AssemblyInfoInputs.cache
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\FESA.SCM.WebSite.AssemblyInfo.cs
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\FESA.SCM.WebSite.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\FESA.SCM.WebSite.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\Microsoft.Practices.Unity.Interception.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\Microsoft.Practices.Unity.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\bin\Debug\netcoreapp2.0\Microsoft.Practices.ServiceLocation.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\FESA.SCM.WebSite.csproj.CopyComplete
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WebSite\obj\Debug\netcoreapp2.0\FESA.SCM.WebSite.csprojAssemblyReference.cache

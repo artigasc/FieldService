@@ -1,0 +1,140 @@
+﻿@model List<FESA.SCM.WebSite.Models.AssignmentModel>
+@{
+    ViewData["Title"] = "ConsultationReports";
+}
+
+@Html.Partial("_Menu")
+
+<div id="dvworkOrders">
+    @{Html.RenderPartial("_ConsultationReportList", Model);}
+</div>
+
+<div class="modal fade" id="filter" tabindex="-1" role="dialog" aria-labelledby="filter" style="padding-right: 17px">
+    <div class="modal-dialog" role="document" style="max-width: 350px; margin: 0;">
+        <div class="modal-content" style="height: 100vh;">
+
+            <div class="modal-header">
+                <input id="WorkOrderNumber" name="WorkOrderNumber" type="hidden" class="form-control" placeholder="">
+                <input id="Client" name="Client" type="hidden" class="form-control" placeholder="">
+                <input id="StartDate" name="StartDate" type="hidden" class="form-control" placeholder="">
+                <input id="EndDate" name="EndDate" type="hidden" class="form-control" placeholder="">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="form" method="POST">
+                    @Html.AntiForgeryToken()
+                    <div class="col-auto my-4">
+                        <label for="inlineFormCustomSelect" class="mr-sm-2" style="font-size: 14px;color: #3e3e3f;">OFICINA</label>
+                        @if (ViewData["Office"] is List<SelectListItem>)
+                        {
+                            <strong>@Html.DropDownList("IdOffice", ViewData["Office"] as List<SelectListItem>, "", new { @class = "custom-select mr-sm-2" })<br></strong>
+                        }
+                    </div>
+                    <div class="col-auto my-4">
+                        <label for="inlineFormCustomSelect" class="mr-sm-2" style="font-size: 14px;color: #3e3e3f;">CENTRO DE COSTOS</label>
+                        @if (ViewData["CostCenter"] is List<SelectListItem>)
+                        {
+                            <strong>@Html.DropDownList("IdCostCenter", ViewData["CostCenter"] as List<SelectListItem>, "", new { @class = "custom-select mr-sm-2" })<br></strong>
+                        }
+                    </div>
+                    <div class="modal-footer" style="text-align: center;display: block;">
+                        <button type="submit" class="btn btn-yellow" style="width: 7rem;">Filtrar</button>
+                    </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<script>
+    $('#OTFilter').keyup(function (event) {
+        $('#WorkOrderNumber').val($('#OTFilter').val())
+    });
+    $('#ClientFilter').keyup(function (event) {
+        $('#Client').val($('#ClientFilter').val());
+    });
+    $('#StartDateFilter').keyup(function (event) {
+        $('#StartDate').val($('#StartDateFilter').val())
+    });
+    $('#EndDateFilter').keyup(function (event) {
+        $('#EndDate').val($('#EndDateFilter').val())
+    });
+    $('#WorkOrderNumber').val($('#OTFilter').val())
+    $('#Client').val($('#ClientFilter').val());
+    $('#StartDate').val($('#StartDateFilter').val())
+    $('#EndDate').val($('#EndDateFilter').val())
+    $(document).ready(function () {
+        $("#form").on("submit", function (e) {
+            $("body").fadeIn(function () {
+                $(".loader").show();
+            });
+
+            e.preventDefault();
+            ajax();
+        });
+    })
+    function ajax() {
+          var params = {
+            WorkOrderNumber: $('#WorkOrderNumber').val(),
+            Client: $('#Client').val(),
+            StartDate: $('#StartDate').val(),
+            EndDate: $('#EndDate').val(),
+            IdBrand: $('#IdBrand').val(),
+            IdOffice: $('#IdOffice').val(),
+            IdCostCenter: $('#IdCostCenter').val(),
+        };
+        console.log(params)
+        $.ajax({
+            url: "/Reports/Search",
+            method: "POST",
+            data: params,
+            async: true,
+            success: function (response) {
+                $('#dvworkOrders').html(response)
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".loader").show();
+                });
+            },
+            complete: function () {
+                $(".loader").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+                alert("Ha ocurrido un error, por favor comuníquese con el administrador")
+            }
+        });
+    }
+    function SendValuesDetailOT(id) {
+        var params = {
+            Id: id
+        };
+        $.ajax({
+            url: "/Reports/OTDetailReports",
+            method: "POST",
+            data: params,
+            dataType: 'json',
+            async: true,
+            success: function (response) {
+                window.location ='@Url.Action("ReportsOTDetail", "Reports")';
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".loader").show();
+                });
+            },
+            complete: function () {
+                $(".loader").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+                alert("Ha ocurrido un error, por favor comuníquese con el administrador")
+            }
+        });
+
+    }
+
+</script>

@@ -1,0 +1,2587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActString" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+
+			html {
+			min-height: 100%;
+			position: relative;
+			}
+
+			body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial;
+			margin-bottom: 40px;
+			}
+
+			footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			color: white;
+			}
+
+			img {
+			height: auto;
+			}
+
+			.header {
+				height: 5rem;
+				background-image: url(https://serviciodecampo.blob.core.windows.net/filetemplates/images/top.png);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				padding: 0 30px;
+			}
+			.innerpadding {
+			padding: 30px 30px 10px 30px;
+            }
+
+			.innercontent {
+				padding: 30px 30px 10px 40px;
+			}
+
+			.innertop {
+				padding: 30px 30px 30px 30px;
+			}
+			.innerbotton {
+				padding: 0px;
+			}
+
+			.h1 {
+				background-color: #fff;
+				padding: 0px;
+				width: 62%;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: bold;
+				font-style: italic;
+			}
+
+			h1 {
+				color: #fff;
+				margin: 0;
+				font-size: 20px;
+				font-style: italic;
+			}
+
+			h3 {
+				background-color: #504f51;
+				padding: 4px 25px;
+				color: #fdd100;
+				font-style: italic;
+				margin: 0;
+				font-size: 15px;
+			}
+
+			h4 {
+				text-align: center;
+				margin: 2px 0;
+				font-style: italic;
+				color: #474445;
+				font-size: 14px;
+			}
+
+			h5 {
+				font-size: 8px;
+				margin: 0;
+				font-style: italic;
+			}
+
+			.innertitle {
+				position: absolute;
+				top: -14px;
+				left: -10px;
+			}
+
+			.tdtitle {
+				background-color: #fbbc24;
+				color: #444142;
+				font-size: 12px;;
+				padding: 4px 10px;
+				font-style: italic;
+				font-weight: bold;
+				width: 35%;
+			}
+
+			.tdcontent {
+				font-size: 12px;
+				color:#57585a;
+				border: 1px solid #d1d2d4;
+				padding: 4px 10px;
+				text-align: justify;
+				width: 65%;
+			}
+
+			.dtindicators {
+				background-color: #d1d2d4; 
+				font-weight: bold; 
+				font-style: italic; 
+				padding: 2px 10px; 
+				width: 25%; 
+				font-size: 12px;
+			}
+
+			.dtdetails {
+				border: 1px solid #d1d2d4;
+				padding: 2px 10px;
+				width: 25%;
+				font-size: 12px;
+				color: #57585a;
+				text-align: center;
+			}
+
+			.footer {
+			padding: 20px 30px 15px 30px;
+			}
+
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding-left: 30px;
+			}
+
+			ul li {
+				font-size: 12px;
+				padding: 10px 0 2px 0;
+				color: #444142
+			}
+
+			ul li:before {
+				content: '-';
+				position: absolute;
+				margin-left: -20px;
+			}
+
+			.circle {
+				height: 16px;
+				width: 16px;
+				background-color: #fff;
+				border-radius: 50%;
+				display: block;
+				text-align: center;
+				margin: 0 auto;
+
+			}
+
+			.one {
+				border: 3px solid #E34030;
+				background-color: transparent;
+			}
+
+			.two {
+				border: 3px solid #E5503E;
+				background-color: transparent;
+			}
+
+			.three {
+				border: 3px solid #E65F3A;
+				background-color: transparent;
+			}
+
+			.four {
+				border: 3px solid #EA7237;
+				background-color: transparent;
+			}
+
+			.five {
+				border: 3px solid #EE8825;
+				background-color: transparent;
+
+			}
+
+			.six {
+				border: 3px solid #F5AC16;
+				background-color: transparent;
+			}
+
+			.seven {
+				border: 3px solid #F5AD00;
+				background-color: transparent;
+			}
+
+			.eight {      
+				border: 3px solid #F4AC16;
+				background-color: transparent;
+			}
+
+			.nine {
+				border: 3px solid #31A537;
+				background-color: transparent;
+			}
+
+			.ten {
+				border: 3px solid #00953B;
+				background-color: transparent;
+			}
+
+			.firna {
+				width: 3rem;
+				height: auto;
+			}
+
+			table {
+				width: 100%;
+			}
+
+		&lt;/style&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		&lt;page size="A4"&gt;
+			&lt;table&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td style="display: block !important;"&gt;
+							&lt;table class="content" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" margin=""&gt;
+								&lt;tbody&gt;
+									&lt;tr&gt;
+										&lt;td class="header" bgcolor="#ffffff"&gt;
+										
+											&lt;table class="" style="width: 100%; max-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="left"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td height="70"&gt;
+															&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+																&lt;tbody&gt;
+																	&lt;tr&gt;
+																		&lt;td style="text-align: center;" width="37"&gt;
+																			&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+																		&lt;/td&gt;
+																		&lt;td class="" style="text-align: center;"&gt;
+																			&lt;h1&gt;ACTA DE CONFORMIDAD&lt;/h1&gt;
+																		&lt;/td&gt;
+																	&lt;/tr&gt;
+																&lt;/tbody&gt;
+															&lt;/table&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+									
+									&lt;tr&gt;
+										&lt;td class="innerpadding"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td class="tdtitle"&gt;
+															&lt;li&gt;Razón Social:&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td class="tdcontent"&gt;
+															@SocialName
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td class="tdtitle"&gt;
+															&lt;li&gt;RUC:&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td class="tdcontent"&gt;
+															@RUC
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td class="tdtitle"&gt;
+															&lt;li&gt;Sucursal Ferreyros&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td class="tdcontent"&gt;
+															@Branch
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td class="tdtitle"&gt;
+															&lt;li&gt;Descripción del Servicio:&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td class="tdcontent"&gt;
+															@Description
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innerpadding"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td class="dtindicators"&gt;OT:&lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@OT&lt;/td&gt;
+														&lt;td class="dtindicators"&gt;Horómetro:&lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@Horometro&lt;/td&gt;
+														
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td class="dtindicators"&gt;Marca: &lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@Brand&lt;/td&gt;
+														&lt;td class="dtindicators"&gt;Número de Serie:&lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@NumberSerie&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td class="dtindicators"&gt;Modelo: &lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@Model&lt;/td&gt;
+														&lt;td class="dtindicators"&gt;Fecha de Entrega:&lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@DateDelivery&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td class="dtindicators"&gt;Técnico Lider: &lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@Technical&lt;/td&gt;
+														&lt;td class="dtindicators"&gt;Fecha de Servicio:&lt;/td&gt;
+														&lt;td class="dtdetails"&gt;@DateService&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+									
+									&lt;tr&gt;
+										&lt;td class="innercontent"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 1rem 0; position: relative;"&gt;
+															&lt;h3 class="innertitle" style="width: 100px;"&gt;Antecendetes&lt;/h3&gt;
+															&lt;ul&gt;
+																&lt;li class="listaguion"&gt;@Antecedent&lt;/li&gt;
+															&lt;/ul&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innercontent"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 1rem 0; position: relative;"&gt;
+															&lt;h3 class="innertitle" style="width: 244px;"&gt;Resumen / Trabajos Realizados&lt;/h3&gt;
+															&lt;ul&gt;
+																&lt;li&gt;@Work&lt;/li&gt;
+															&lt;/ul&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innercontent"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 1rem 0; position: relative;"&gt;
+															&lt;h3 class="innertitle" style="width: 258px;"&gt;Observacines / Recomendaciones&lt;/h3&gt;
+															&lt;ul&gt;
+																&lt;li&gt;@Observations&lt;/li&gt;
+																&lt;li&gt;@Recommendations&lt;/li&gt;
+															&lt;/ul&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								
+									&lt;tr&gt;
+										&lt;td class="innerpadding"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td&gt;&lt;/td&gt;
+														&lt;td class="tabletitle" style="width: 50%; text-align: center;"&gt;&lt;img style="width: 50%;" src="@SignAct" alt=""&gt;&lt;/td&gt;
+														&lt;td&gt;&lt;/td&gt;
+													&lt;/tr&gt; 
+													&lt;tr&gt;
+														&lt;td&gt;&lt;/td&gt;
+														&lt;td class="tabletitle" style="width: 50%; font-size: 18px; font-style: italic; text-align: center; border-bottom: 1.5px solid #fbbc24;"&gt;&lt;/td&gt;
+														&lt;td&gt;&lt;/td&gt;
+													&lt;/tr&gt; 
+													&lt;tr&gt;
+														&lt;td&gt;&lt;/td&gt;
+														&lt;td class="tabletitle" style="width: 50%; font-size: 14px; font-weight: bold; font-style: italic; text-align: center; color: #fbbc24;"&gt;Nombre: @Client&lt;/td&gt;
+														&lt;td&gt;&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innertop"&gt;
+											&lt;table width="100%" border="0" style="background-color: #f0f0f0;"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="width: 100%; text-align: left"&gt;
+															&lt;p style="color: #444142;margin: 0;font-size: 14px;font-style: italic;text-align: left;font-weight: bold; padding: 5px 14px;"&gt;¿Cuán satisfecho se encuentra con el servicio recibido?&lt;/p&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td class="innerbotton"&gt;
+															&lt;table width="100%" border="0"&gt;
+																&lt;tbody&gt;
+																	&lt;tr&gt;
+																		&lt;td style="width: 10%"&gt;
+																			&lt;div class="circle one"&gt;&lt;/div&gt;
+																			&lt;h4&gt;1&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle two"&gt;&lt;/div&gt;
+																				&lt;h4&gt;2&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle three"&gt;&lt;/div&gt;
+																				&lt;h4&gt;3&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle four"&gt;&lt;/div&gt;
+																				&lt;h4&gt;4&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle five"&gt;&lt;/div&gt;
+																				&lt;h4&gt;5&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle six"&gt;&lt;/div&gt;
+																				&lt;h4&gt;6&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle seven"&gt;&lt;/div&gt;
+																				&lt;h4&gt;7&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle eight"&gt;&lt;/div&gt;
+																				&lt;h4&gt;8&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle nine"&gt;&lt;/div&gt;
+																				&lt;h4&gt;9&lt;/h4&gt;
+																		&lt;/td&gt;
+																		&lt;td style="width: 10%"&gt;
+																				&lt;div class="circle ten"&gt;&lt;/div&gt;
+																				&lt;h4&gt;10&lt;/h4&gt;
+																		&lt;/td&gt;
+																	&lt;/tr&gt;
+																&lt;/tbody&gt;
+															&lt;/table&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+		
+													&lt;tr&gt;
+														&lt;td class="innerbotton"&gt;
+															&lt;table width="100%" border="0"&gt;
+																&lt;tbody&gt;
+																	&lt;tr&gt;
+																		&lt;td style="width: 5%;"&gt;&lt;/td&gt;
+					
+																		&lt;td style="width: 42%; text-align: center"&gt;
+																			&lt;h5 style="color: #e34030;border-top: 1px solid #e34030;padding-top: 5px;"&gt;INSATISFECHO&lt;/h5&gt;
+																		&lt;/td&gt;
+					
+																		&lt;td style="width: 7%;"&gt;&lt;/td&gt;
+					
+																		&lt;td style="width: 24%; text-align: center"&gt;
+																			&lt;h5 style="color: #fbbc24;border-top: 1px solid #fbbc24;padding-top: 5px;"&gt;MEDIANAMENTE SATISFECHO&lt;/h5&gt;
+																		&lt;/td&gt;
+					
+																		&lt;td style="width: 7%;"&gt;&lt;/td&gt;
+					
+																		&lt;td style="width: 10%; text-align: center"&gt;
+																			&lt;h5 style="color: #31A537; border-top: 1px solid #31A537;padding-top: 5px;"&gt;SATISFECHO&lt;/h5&gt;
+																		&lt;/td&gt;
+					
+																		&lt;td style="width: 5%;"&gt;&lt;/td&gt;
+																	&lt;/tr&gt;
+																&lt;/tbody&gt;
+															&lt;/table&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/tbody&gt;
+							&lt;/table&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+        &lt;/page&gt;
+        
+		&lt;footer&gt;
+			&lt;table&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td class="footer" bgcolor="#000" height="6rem"&gt;
+							&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+								&lt;tbody&gt;
+									&lt;tr&gt;
+										&lt;td style="padding: 10px 0 10px 0;" align="right"&gt;
+											&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="text-align: right; padding: 0 10px 0 10px;" width="37"&gt;
+															&lt;a href="#"&gt;
+															&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+															&lt;/a&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/tbody&gt;
+							&lt;/table&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/footer&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ExeString" xml:space="preserve">
+    <value>&lt;!DOCTYPE html PUBLIC&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+
+			html {
+			min-height: 100%;
+			position: relative;
+			}
+
+			body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial;
+			margin-bottom: 40px;
+			}
+
+			footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			color: white;
+			}
+
+			img {
+			height: auto;
+			}
+
+			.header {
+				height: 5rem;
+				background-image: url(https://serviciodecampo.blob.core.windows.net/filetemplates/images/top.png);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				padding: 0 30px;
+			}
+			.innerpadding {
+			padding: 30px 30px 10px 30px;
+            }
+
+			.innercontent {
+				padding: 30px 30px 10px 40px;
+			}
+
+			.innertop {
+				padding: 30px 30px 0px 30px;
+			}
+			.innerbotton {
+				padding: 0px 30px 30px 30px;
+			}
+
+			.h1 {
+				background-color: #fff;
+				padding: 0px;
+				width: 62%;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: bold;
+				font-style: italic;
+			}
+
+			h1 {
+				color: #fff;
+				margin: 0;
+				font-size: 20px;
+				font-style: italic;
+			}
+
+			h3 {
+				background-color: #504f51;
+				padding: 4px 25px;
+				color: #fdd100;
+				font-style: italic;
+				margin: 0;
+				font-size: 15px;
+			}
+
+			h4 {
+				text-align: center;
+				margin: 2px 0;
+				font-style: italic;
+				color: #474445;
+				font-size: 14px;
+			}
+
+			h5 {
+				font-size: 8px;
+				margin: 0;
+				font-style: italic;
+			}
+
+			p {
+				font-size: 10px;
+				margin: 5px;
+			}
+
+			.innertitle {
+				position: absolute;
+				top: -14px;
+				left: -10px;
+			}
+
+			.footer {
+			padding: 20px 30px 15px 30px;
+			}
+			
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding-left: 30px;
+			}
+
+			ul li {
+				font-size: 12px;
+				padding: 10px 0 2px 0;
+				color: #444142
+			}
+
+			ul li:before {
+				content: '-';
+				position: absolute;
+				margin-left: -20px;
+			}
+
+			table {
+				width: 100%;
+			}
+
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;page size="A4"&gt;
+			&lt;table&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td style="display: block !important;"&gt;
+							&lt;table class="content" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" margin="1rem auto"&gt;
+								&lt;tbody&gt;
+									&lt;tr&gt;
+										&lt;td class="header" bgcolor="#ffffff"&gt;
+										
+											&lt;table class="col425" style="width: 100%; max-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="left"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td height="70"&gt;
+															&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+																&lt;tbody&gt;
+																	&lt;tr&gt;
+																		&lt;td style="text-align: center;" width="37"&gt;
+																			&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+																		&lt;/td&gt;
+																		&lt;td class="" style="text-align: right;"&gt;
+																			&lt;h1&gt;INFORME DE SERVICIO EJECUTIVO&lt;/h1&gt;
+																		&lt;/td&gt;
+																	&lt;/tr&gt;
+																&lt;/tbody&gt;
+															&lt;/table&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+									
+									&lt;tr&gt;
+										&lt;td class="innerpadding"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="background-color: #fbbc24; color: #444142; font-size: 12px;; padding: 4px 10px; font-style: italic; font-weight: bold; width: 35%;"&gt;
+															&lt;li&gt;Razón Social:&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td style="font-size: 12px; color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 65%;"&gt;
+															@SocialName
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td style="background-color: #fbbc24; color: #444142; font-size: 12px;; padding: 4px 10px; font-style: italic; font-weight: bold; width: 35%;"&gt;
+															&lt;li&gt;RUC:&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td style="font-size: 12px; color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 65%;"&gt;
+															@RUC
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td style="background-color: #fbbc24; color: #444142; font-size: 12px; padding: 4px 10px; font-style: italic; font-weight: bold; width: 35%;"&gt;
+															&lt;li&gt;Sucursal Ferreyros&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td style="font-size: 12px; color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 65%;"&gt;
+															@Branch
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td style="background-color: #fbbc24; color: #444142; font-size: 12px; padding: 4px 10px; font-style: italic; font-weight: bold; width: 35%;"&gt;
+															&lt;li&gt;Descripción del Servicio:&lt;/li&gt;
+														&lt;/td&gt;
+														&lt;td style="font-size: 12px; color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 65%;"&gt;
+															@Description
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innerpadding"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;OT:&lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@OT&lt;/td&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;Horómetro:&lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@Horometro&lt;/td&gt;
+														
+													&lt;/tr&gt;
+
+													&lt;tr&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;Marca: &lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@Brand&lt;/td&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;Número de Serie:&lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@NumberSerie&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;Modelo: &lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@Model&lt;/td&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;Fecha de Entrega:&lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@DateDelivery&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;Técnico Lider: &lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@Technical&lt;/td&gt;
+														&lt;td style="background-color: #d1d2d4; font-weight: bold; font-style: italic; padding: 2px 10px; width: 25%; font-size: 12px;"&gt;Fecha de Servicio:&lt;/td&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 2px 10px; width: 25%; font-size: 12px; color: #57585a; text-align: center;"&gt;@DateService&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+									
+									&lt;tr&gt;
+										&lt;td class="innercontent"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td&gt;
+															
+														&lt;/td&gt;
+													&lt;/tr&gt;
+													&lt;tr&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 1rem 0; position: relative;"&gt;
+															&lt;h3 class="innertitle" style="width: 100px;"&gt;Antecendetes&lt;/h3&gt;
+															&lt;ul&gt;
+																&lt;li class="listaguion"&gt;@Antecedent&lt;/li&gt;
+															&lt;/ul&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innercontent"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 1rem 0; position: relative;"&gt;
+															&lt;h3 class="innertitle" style="width: 244px;"&gt;Resumen / Trabajos Realizados&lt;/h3&gt;
+															&lt;ul&gt;
+																&lt;li&gt;@Work&lt;/li&gt;
+															&lt;/ul&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innercontent"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="border: 1px solid #d1d2d4; padding: 1rem 0; position: relative;"&gt;
+															&lt;h3 class="innertitle" style="width: 258px;"&gt;Observacines / Recomendaciones&lt;/h3&gt;
+															&lt;ul&gt;
+																&lt;li&gt;@Observations&lt;/li&gt;
+																&lt;li&gt;@Recommendations&lt;/li&gt;
+															&lt;/ul&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+
+									&lt;tr&gt;
+										&lt;td class="innerpadding"&gt;
+											&lt;table width="100%" border="0"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td style="width: 10%;"&gt;
+															&lt;a href=""&gt;&lt;/a&gt;
+														&lt;/td&gt;
+														&lt;td style="width: 1.5%; border-top: 1px solid #fdd100; border-bottom: 1px solid #fdd100; border-left: 1px solid #fdd100;"&gt;
+
+														&lt;/td&gt;
+														&lt;td style="width: 79%; text-align: center;"&gt;
+															&lt;p&gt;&lt;b&gt;Contacto directo: &lt;/b&gt;[@Supervisor]&lt;/p&gt;
+															&lt;p&gt;Nro. de teléfono: @SPhone - Email: @SMail&lt;/p&gt;
+															&lt;p&gt;¿Dudas consultas? Comunicarse al 01 626 400 (Lima) / 0 800 13070 (provincias)&lt;/p&gt;
+														&lt;/td&gt;
+														&lt;td style="width: 1.5%; border-top: 1px solid #fdd100; border-bottom: 1px solid #fdd100; border-right: 1px solid #fdd100;"&gt;
+
+														&lt;/td&gt;
+														&lt;td style="width: 10%;"&gt;
+
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+									
+									
+								&lt;/tbody&gt;
+							&lt;/table&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/page&gt;
+		&lt;footer&gt;
+			&lt;table&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td class="footer" bgcolor="#000" height="6rem"&gt;
+							&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+								&lt;tbody&gt;
+									&lt;tr&gt;
+										&lt;td style="padding: 10px 0 10px 0;" align="right"&gt;
+											&lt;table width="100%" cellspacing="0" cellpadding="0" border="0" &gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td&gt;
+															&lt;p style="color: #fff; font-size: 8px; text-align: left"&gt;Este informe de servicio es de carácter informativo elaborado el mismo día de la realización del servicio&lt;/p&gt;
+														&lt;/td&gt;
+														&lt;td style="text-align: center; padding: 0 10px 0 10px;" width="37"&gt;
+															&lt;a href="#"&gt;
+															&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+															&lt;/a&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/tbody&gt;
+							&lt;/table&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/footer&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>&lt;!DOCTYPE html PUBLIC&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			body {
+			margin: 0;
+			padding: 0;
+			min-width: 100% !important;
+			letter-spacing: 0.7px;
+			}
+
+			img {
+			height: auto;
+			}
+
+			.content {
+			width: 100%;
+			max-width: 600px;
+			}
+
+			.header {
+            height: 10rem;
+            background-image: url(https://serviciodecampo.blob.core.windows.net/filetemplates/images/header.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+			}
+
+			.innerpadding {
+			padding: 30px 30px 30px 30px;
+            }
+
+            .bodytop {
+                padding: 30px 30px 30px 30px;
+            }
+			
+            .bodycontent {
+                padding: 4px 30px 30px 30px;
+            }
+
+			.subhead {
+			font-size: 15px;
+			color: #3e3e3f;
+			font-family: sans-serif;
+			letter-spacing: 10px;
+			}
+
+			.h1,
+			.h2,
+			.bodycopy {
+			color: #57585a;
+			font-family: sans-serif;
+			}
+
+			.h1 {
+				background-color: #fff;
+				padding: 0px;
+				width: 62%;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: bold;
+				font-style: italic;
+				letter-spacing: normal !important;
+			}
+
+			.h2 {
+			padding: 0 0 15px 0;
+			font-size: 24px;
+			line-height: 28px;
+			font-weight: bold;
+			}
+
+			.bodycopy {
+			font-size: 16px;
+			line-height: 22px;
+			}
+
+			.button {
+			text-align: center;
+			font-size: 18px;
+			font-family: sans-serif;
+			font-weight: bold;
+			padding: 0 30px 0 30px;
+			}
+
+			.button a {
+			color: #ffffff;
+			text-decoration: none;
+			}
+			.footer {
+			padding: 20px 30px 15px 30px;
+			}
+
+			.footercopy {
+			font-family: sans-serif;
+			font-size: 14px;
+			color: #ffffff;
+			}
+
+			.footercopy a {
+			color: #ffffff;
+			text-decoration: underline;
+			}
+			@media only screen and (max-width: 550px),
+			screen and (max-device-width: 550px) {
+			body[yahoo] .hide {
+			display: none!important;
+			}
+			body[yahoo] .buttonwrapper {
+			background-color: transparent!important;
+			}
+			body[yahoo] .button {
+			padding: 0px!important;
+			}
+			body[yahoo] .button a {
+			background-color: #e05443;
+			padding: 15px 15px 13px!important;
+			}
+			body[yahoo] .unsubscribe {
+			display: block;
+			margin-top: 20px;
+			padding: 10px 50px;
+			background: #2f3942;
+			border-radius: 5px;
+			text-decoration: none!important;
+			font-weight: bold;
+			}
+			.tabletitle {
+				width: 70% !important;
+			}
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body yahoo="" bgcolor="#525659"&gt;
+		&lt;table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#525659"&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;table class="content" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" margin="1rem auto"&gt;
+							&lt;tbody&gt;
+								&lt;tr&gt;
+									&lt;td class="header" bgcolor="#ffffff"&gt;
+									
+										&lt;table class="col425" style="width: 100%; max-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="left"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td height="70"&gt;
+														&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td class="" style="padding: 4rem 0 0 0; text-align: center;"&gt;
+                                                                        &lt;h1 class="h1"&gt;NOTIFICACIÓN DE SERVICIO DE CAMPO&lt;/h1&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+                                &lt;tr&gt;
+                                    &lt;td class="innerpadding"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: auto; font-size: 20px; font-style: italic; text-align: center; border-bottom: 1.5px solid #fbbc24;"&gt;&lt;b style="color:#fbbc24"&gt;Hola,&lt;/b&gt; @FullName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                &lt;/tr&gt; 
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: 60%; font-size: 16px; font-weight: bold; font-style: italic; text-align: right; color: #fbbc24;"&gt;@SocialName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodytop"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold; width: 25%;"&gt;
+                                                        Servicio
+                                                    &lt;/td&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 75%;"&gt;
+														@Description
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodycontent"&gt;
+                                        &lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold;"&gt;
+                                                        Estado de Servicio
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 10px; text-align: justify;"&gt;
+														@Message
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+								
+								&lt;tr&gt;
+									&lt;td class="footer" bgcolor="#000"&gt;
+										&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td style="padding: 10px 0 10px 0;" align="right"&gt;
+														&lt;table cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td style="text-align: center; padding: 0 10px 0 10px;" width="37"&gt;
+																		&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/tbody&gt;
+						&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+		&lt;script type="text/javascript" async="" src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ServiceClient" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			body {
+			margin: 0;
+			padding: 0;
+			min-width: 100% !important;
+			letter-spacing: 0.5px;
+			font-family: serif;
+			}
+
+			.content {
+			width: 100%;
+			max-width: 600px;
+			}
+
+			.header {
+			background-image: url(https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+			height: auto;
+			width: 100%;
+			display: block;
+			margin: 0 auto;
+			}
+
+			.innerpadding {
+			padding: 30px 30px 30px 30px;
+            }
+
+            .bodytop {
+                padding: 30px 30px 30px 30px;
+            }
+
+			.innerbotton {
+				padding: 0px 30px 30px 30px;
+			}
+			
+            .bodycontent {
+                padding: 0px 30px 30px 30px;
+            }
+
+			.subhead {
+			font-size: 15px;
+			color: #3e3e3f;
+			letter-spacing: 10px;
+			}
+
+			.h1 {
+				background-color: #fff;
+				padding: 0px;
+				width: 62%;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: bold;
+				font-style: italic;
+				letter-spacing: normal !important;
+			}
+
+			.h2 {
+			padding: 0 0 15px 0;
+			font-size: 24px;
+			line-height: 28px;
+			font-weight: bold;
+			}
+
+			.bodycopy {
+			font-size: 16px;
+			line-height: 22px;
+			}
+
+			.button {
+			text-align: center;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 0 30px 0 30px;
+			}
+
+			.button a {
+			color: #ffffff;
+			text-decoration: none;
+			}
+			.footer {
+			padding: 20px 30px 15px 30px;
+			background-color: #000;
+			}
+			
+			.tdprimary {
+				background-color: #d1d2d4;
+				border: 1px solid #d1d2d4;
+				color: #000;
+				font-weight: bold;
+				font-style: italic;
+				padding: 2px 10px;
+				width: 20%;
+				font-size: 14px;
+			}
+
+			.tdsecundary {
+				background-color: #fff;
+				border: 1px solid #d1d2d4;
+				color: #57585a;
+				padding: 2px 10px;
+				width: 30%;
+				font-size: 14px;
+			}
+
+			.footercopy {
+			font-size: 14px;
+			color: #ffffff;
+			}
+
+			.footercopy a {
+			color: #ffffff;
+			text-decoration: underline;
+			}
+			@media only screen and (max-width: 550px),
+			screen and (max-device-width: 550px) {
+			body[yahoo] .hide {
+			display: none!important;
+			}
+			body[yahoo] .buttonwrapper {
+			background-color: transparent!important;
+			}
+			body[yahoo] .button {
+			padding: 0px!important;
+			}
+			body[yahoo] .button a {
+			background-color: #e05443;
+			padding: 15px 15px 13px!important;
+			}
+			body[yahoo] .unsubscribe {
+			display: block;
+			margin-top: 20px;
+			padding: 10px 50px;
+			background: #2f3942;
+			border-radius: 5px;
+			text-decoration: none!important;
+			font-weight: bold;
+			}
+			.tabletitle {
+				width: 70% !important;
+			}
+			}
+
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body yahoo="" bgcolor="#fff"&gt;
+		&lt;table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#fff"&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;table class="content" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" margin="1rem auto"&gt;
+							&lt;tbody style="box-shadow: 0px 0px 15px #e2e2e2;"&gt;
+								&lt;tr&gt;
+									&lt;td class="header"&gt;
+									
+										&lt;table style="width: 100%; max-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="left"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td class="" style="text-align: center;"&gt;
+																			&lt;img style="width: 100%; height: auto;" src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png" alt=""&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+                                &lt;tr&gt;
+                                    &lt;td class="innerpadding"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: auto; font-size: 20px; font-style: italic; text-align: center; border-bottom: 1.5px solid #fbbc24;"&gt;&lt;b style="color:#fbbc24"&gt;Hola,&lt;/b&gt; @FullName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                &lt;/tr&gt; 
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: 60%; font-size: 16px; font-weight: bold; font-style: italic; text-align: right; color: #fbbc24;"&gt;@SocialName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodytop"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold; width: 25%;"&gt;
+                                                        Servicio
+                                                    &lt;/td&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 75%;"&gt;
+														@Description
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodycontent"&gt;
+                                        &lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold;"&gt;
+                                                        Estado de Servicio
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 10px; text-align: justify;"&gt;
+														@Message
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+								&lt;tr&gt;
+									&lt;td class="innerbotton"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td colspan="6" style="background-color: #fbbc24;color: #fff;font-size: 14px;padding: 6px 10px;font-style: italic;font-weight: bold;"&gt;Equipo de trabajo&lt;/td&gt;
+												&lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td class="tdprimary"&gt;Supervisor:&lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@Supervisor&lt;/td&gt;
+                                                    &lt;td class="tdprimary"&gt;Correo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@SMail&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Celular:&lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@SPhone&lt;/td&gt;
+                                                &lt;/tr&gt;
+
+                                                &lt;tr&gt;
+                                                    &lt;td class="tdprimary"&gt;Técnico Líder:&lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@Technical&lt;/td&gt;
+                                                    &lt;td class="tdprimary"&gt;Correo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@TMail&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Celular:&lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@TPhone&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Cantidad de técnicos asignados:&lt;/td&gt;
+													&lt;td colspan="6" class="tdsecundary"&gt;@Number&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								
+								&lt;tr&gt;
+									&lt;td class="footer" bgcolor="#000"&gt;
+										&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td style="padding: 10px 0 10px 0;" align="right"&gt;
+														&lt;table cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td style="text-align: center; padding: 0 10px 0 10px;" width="37"&gt;
+																		&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/tbody&gt;
+						&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+		&lt;script type="text/javascript" async="" src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ServiceFull" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			body {
+			margin: 0;
+			padding: 0;
+			min-width: 100% !important;
+			letter-spacing: 0.5px;
+			font-family: serif;
+			}
+
+			.content {
+			width: 100%;
+			max-width: 600px;
+			}
+
+			.header {
+			background-image: url(https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+			height: auto;
+			width: 100%;
+			display: block;
+			margin: 0 auto;
+			}
+
+			.innerpadding {
+			padding: 30px 30px 30px 30px;
+            }
+
+			.innertableprimary {
+				padding: 30px 30px 30px 30px;
+			}
+
+            .bodytop {
+                padding: 30px 30px 30px 30px;
+            }
+
+			.innerbotton {
+				padding: 0px 30px 30px 30px;
+			}
+			
+            .bodycontent {
+                padding: 4px 30px 4px 30px;
+            }
+
+			.subhead {
+			font-size: 15px;
+			color: #3e3e3f;
+			letter-spacing: 10px;
+			}
+
+			.h1 {
+				background-color: #fff;
+				padding: 0px;
+				width: 62%;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: bold;
+				font-style: italic;
+				letter-spacing: normal !important;
+			}
+
+			.h2 {
+			padding: 0 0 15px 0;
+			font-size: 24px;
+			line-height: 28px;
+			font-weight: bold;
+			}
+
+			.bodycopy {
+			font-size: 16px;
+			line-height: 22px;
+			}
+
+			.button {
+			text-align: center;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 0 30px 0 30px;
+			}
+
+			.button a {
+			color: #ffffff;
+			text-decoration: none;
+			}
+
+			.footer {
+			padding: 20px 30px 15px 30px;
+			background-color: #000;
+			}
+			
+			.tdprimary {
+				background-color: #d1d2d4;
+				border: 1px solid #d1d2d4;
+				color: #000;
+				font-weight: bold;
+				font-style: italic;
+				padding: 2px 10px;
+				width: 20%;
+				font-size: 14px;
+			}
+
+			.tdsecundary {
+				background-color: #fff;
+				border: 1px solid #d1d2d4;
+				color: #57585a;
+				padding: 2px 10px;
+				width: 30%;
+				font-size: 14px;
+			}
+
+			.footercopy {
+			font-size: 14px;
+			color: #ffffff;
+			}
+
+			.footercopy a {
+			color: #ffffff;
+			text-decoration: underline;
+			}
+
+			@media only screen and (max-width: 550px),
+			screen and (max-device-width: 550px) {
+			body[yahoo] .hide {
+			display: none!important;
+			}
+			body[yahoo] .buttonwrapper {
+			background-color: transparent!important;
+			}
+			body[yahoo] .button {
+			padding: 0px!important;
+			}
+			body[yahoo] .button a {
+			background-color: #e05443;
+			padding: 15px 15px 13px!important;
+			}
+			body[yahoo] .unsubscribe {
+			display: block;
+			margin-top: 20px;
+			padding: 10px 50px;
+			background: #2f3942;
+			border-radius: 5px;
+			text-decoration: none!important;
+			font-weight: bold;
+			}
+			.tabletitle {
+				width: 70% !important;
+			}
+			}
+
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body yahoo="" bgcolor="#fff"&gt;
+		&lt;table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#fff"&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;table class="content" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" margin="1rem auto"&gt;
+							&lt;tbody style="box-shadow: 0px 0px 15px #e2e2e2;"&gt;
+								&lt;tr&gt;
+									&lt;td class="header"&gt;
+									
+										&lt;table style="width: 100%; max-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="left"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td class="" style="text-align: center;"&gt;
+																		&lt;img style="width: 100%; height: auto;" src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png" alt=""&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+                                &lt;tr&gt;
+                                    &lt;td class="innerpadding"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: auto; font-size: 20px; font-style: italic; text-align: center; border-bottom: 1.5px solid #fbbc24;"&gt;&lt;b style="color:#fbbc24"&gt;Hola,&lt;/b&gt; @FullName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                &lt;/tr&gt; 
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: 60%; font-size: 16px; font-weight: bold; font-style: italic; text-align: right; color: #fbbc24;"&gt;@SocialName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodytop"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold; width: 25%;"&gt;
+                                                        Servicio
+                                                    &lt;/td&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 75%;"&gt;
+														@Description
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodycontent"&gt;
+                                        &lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold;"&gt;
+                                                        Estado de Servicio
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 10px; text-align: justify;"&gt;
+														@Message
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+								&lt;tr&gt;
+									&lt;td class="innertableprimary"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;OT:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@OT&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Modelo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Model&lt;/td&gt;
+												&lt;/tr&gt;
+
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Marca: &lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Brand&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Nro. de Serie:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@NumberSerie&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+
+								&lt;tr&gt;
+									&lt;td class="innerbotton"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td colspan="6" style="background-color: #fbbc24;color: #fff;font-size: 14px;padding: 6px 10px;font-style: italic;font-weight: bold;"&gt;Equipo de trabajo&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Supervisor:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Supervisor&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Correo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@SMail&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Celular:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@SPhone&lt;/td&gt;
+												&lt;/tr&gt;
+
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Técnico Líder:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Technical&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Correo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@TMail&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Celular:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@TPhone&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Cantidad de técnicos asignados:&lt;/td&gt;
+													&lt;td colspan="6" class="tdsecundary"&gt;@Number&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								
+								&lt;tr&gt;
+									&lt;td class="footer" bgcolor="#000"&gt;
+										&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td style="padding: 10px 0 10px 0;" align="right"&gt;
+														&lt;table cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td style="text-align: center; padding: 0 10px 0 10px;" width="37"&gt;
+																		&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/tbody&gt;
+						&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+		&lt;script type="text/javascript" async="" src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ServiceGeneral" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			body {
+			margin: 0;
+			padding: 0;
+			min-width: 100% !important;
+			letter-spacing: 0.5px;
+			font-family: serif;
+			}
+
+			.content {
+			width: 100%;
+			max-width: 600px;
+			}
+
+			.header {
+            background-image: url(https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+			height: 180px;
+			width: auto;
+			display: block;
+			margin: 0 auto;
+			}
+
+			.innerpadding {
+			padding: 30px 30px 30px 30px;
+            }
+
+			.innertableprimary {
+				padding: 30px 30px 30px 30px;
+			}
+
+            .bodytop {
+                padding: 30px 30px 30px 30px;
+            }
+			
+            .bodycontent {
+                padding: 4px 30px 4px 30px;
+            }
+
+			.subhead {
+			font-size: 15px;
+			color: #3e3e3f;
+			letter-spacing: 10px;
+			}
+
+			.h1 {
+				background-color: #fff;
+				padding: 0px;
+				width: 62%;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: bold;
+				font-style: italic;
+				letter-spacing: normal !important;
+			}
+
+			.h2 {
+			padding: 0 0 15px 0;
+			font-size: 24px;
+			line-height: 28px;
+			font-weight: bold;
+			}
+
+			.bodycopy {
+			font-size: 16px;
+			line-height: 22px;
+			}
+
+			.button {
+			text-align: center;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 0 30px 0 30px;
+			}
+
+			.button a {
+			color: #ffffff;
+			text-decoration: none;
+			}
+			.footer {
+			padding: 20px 30px 15px 30px;
+			background-color: #000;
+			}
+
+			.tdprimary {
+				background-color: #d1d2d4;
+				border: 1px solid #d1d2d4;
+				color: #000;
+				font-weight: bold;
+				font-style: italic;
+				padding: 2px 10px;
+				width: 20%;
+				font-size: 14px;
+			}
+
+			.tdsecundary {
+				background-color: #fff;
+				border: 1px solid #d1d2d4;
+				color: #57585a;
+				padding: 2px 10px;
+				width: 30%;
+				font-size: 14px;
+			}
+
+			.footercopy {
+			font-size: 14px;
+			color: #ffffff;
+			}
+
+			.footercopy a {
+			color: #ffffff;
+			text-decoration: underline;
+			}
+			@media only screen and (max-width: 550px),
+			screen and (max-device-width: 550px) {
+			body[yahoo] .hide {
+			display: none!important;
+			}
+			body[yahoo] .buttonwrapper {
+			background-color: transparent!important;
+			}
+			body[yahoo] .button {
+			padding: 0px!important;
+			}
+			body[yahoo] .button a {
+			background-color: #e05443;
+			padding: 15px 15px 13px!important;
+			}
+			body[yahoo] .unsubscribe {
+			display: block;
+			margin-top: 20px;
+			padding: 10px 50px;
+			background: #2f3942;
+			border-radius: 5px;
+			text-decoration: none!important;
+			font-weight: bold;
+			}
+			.tabletitle {
+				width: 70% !important;
+			}
+			}
+
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body yahoo="" bgcolor="#fff"&gt;
+		&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;table class="content" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" margin="1rem auto"&gt;
+							&lt;tbody style="box-shadow: 0px 0px 15px #e2e2e2;"&gt;
+								&lt;tr&gt;
+									&lt;td class="header"&gt;
+										&lt;table style="width: 100%; max-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="left"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td style="text-align: center;"&gt;
+                                                                        &lt;img style="width: auto; height: 180px;" src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png" alt=""&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+                                &lt;tr&gt;
+                                    &lt;td class="innerpadding"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: auto; font-size: 20px; font-style: italic; text-align: center; border-bottom: 1.5px solid #fbbc24;"&gt;&lt;b style="color:#fbbc24"&gt;Hola,&lt;/b&gt; @FullName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                &lt;/tr&gt; 
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: 60%; font-size: 16px; font-weight: bold; font-style: italic; text-align: right; color: #fbbc24;"&gt;@SocialName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodytop"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold; width: 25%;"&gt;
+                                                        Servicio
+                                                    &lt;/td&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 75%;"&gt;
+														@Description
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodycontent"&gt;
+                                        &lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold;"&gt;
+                                                        Estado de Servicio
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 10px; text-align: justify;"&gt;
+														@Message
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+								&lt;tr&gt;
+									&lt;td class="innertableprimary"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td class="tdprimary"&gt;OT:&lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@OT&lt;/td&gt;
+                                                    &lt;td class="tdprimary"&gt;Modelo:&lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@Model&lt;/td&gt;
+                                                &lt;/tr&gt;
+
+                                                &lt;tr&gt;
+                                                    &lt;td class="tdprimary"&gt;Marca: &lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@Brand&lt;/td&gt;
+                                                    &lt;td class="tdprimary"&gt;Nro. de Serie:&lt;/td&gt;
+                                                    &lt;td class="tdsecundary"&gt;@NumberSerie&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								
+								&lt;tr&gt;
+									&lt;td class="footer" bgcolor="#000"&gt;
+										&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td style="padding: 10px 0 10px 0;" align="right"&gt;
+														&lt;table cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td style="text-align: center; padding: 0 10px 0 10px;" width="37"&gt;
+																		&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/tbody&gt;
+						&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+		&lt;script type="text/javascript" async="" src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+		&lt;script src=""&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ServiceOffline" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			body {
+			margin: 0;
+			padding: 0;
+			min-width: 100% !important;
+			letter-spacing: 0.5px;
+			font-family: serif;
+			}
+
+			.content {
+			width: 100%;
+			max-width: 600px;
+			}
+
+			.header {
+			background-image: url(https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+			height: auto;
+			width: 100%;
+			display: block;
+			margin: 0 auto;
+			}
+
+			.innerpadding {
+			padding: 30px 30px 30px 30px;
+            }
+
+			.innertableprimary {
+				padding: 30px 30px 30px 30px;
+			}
+
+            .bodytop {
+                padding: 30px 30px 30px 30px;
+            }
+
+			.innerbotton {
+				padding: 0px 30px 30px 30px;
+			}
+			
+            .bodycontent {
+                padding: 4px 30px 4px 30px;
+            }
+
+			.subhead {
+			font-size: 15px;
+			color: #3e3e3f;
+			letter-spacing: 10px;
+			}
+
+			.h1 {
+				background-color: #fff;
+				padding: 0px;
+				width: 62%;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: bold;
+				font-style: italic;
+				letter-spacing: normal !important;
+			}
+
+			.h2 {
+			padding: 0 0 15px 0;
+			font-size: 24px;
+			line-height: 28px;
+			font-weight: bold;
+			}
+
+			.bodycopy {
+			font-size: 16px;
+			line-height: 22px;
+			}
+
+			.button {
+			text-align: center;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 0 30px 0 30px;
+			}
+
+			.button a {
+			color: #ffffff;
+			text-decoration: none;
+			}
+
+			.footer {
+			padding: 20px 30px 15px 30px;
+			background-color: #000;
+			}
+
+			.tdprimary {
+				background-color: #d1d2d4;
+				border: 1px solid #d1d2d4;
+				color: #000;
+				font-weight: bold;
+				font-style: italic;
+				padding: 2px 10px;
+				width: 20%;
+				font-size: 14px;
+			}
+
+			.tdsecundary {
+				background-color: #fff;
+				border: 1px solid #d1d2d4;
+				color: #57585a;
+				padding: 2px 10px;
+				width: 30%;
+				font-size: 14px;
+			}
+
+			.footercopy {
+			font-size: 14px;
+			color: #ffffff;
+			}
+
+			.footercopy a {
+			color: #ffffff;
+			text-decoration: underline;
+			}
+
+			ul {
+				padding-left: 20px;
+			}
+
+			li {
+				padding: 5px 0;
+			}
+
+			@media only screen and (max-width: 550px),
+			screen and (max-device-width: 550px) {
+			body[yahoo] .hide {
+			display: none!important;
+			}
+			body[yahoo] .buttonwrapper {
+			background-color: transparent!important;
+			}
+			body[yahoo] .button {
+			padding: 0px!important;
+			}
+			body[yahoo] .button a {
+			background-color: #e05443;
+			padding: 15px 15px 13px!important;
+			}
+			body[yahoo] .unsubscribe {
+			display: block;
+			margin-top: 20px;
+			padding: 10px 50px;
+			background: #2f3942;
+			border-radius: 5px;
+			text-decoration: none!important;
+			font-weight: bold;
+			}
+			.tabletitle {
+				width: 70% !important;
+			}
+			}
+
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body yahoo="" bgcolor="#fff"&gt;
+		&lt;table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#fff"&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;table class="content" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" margin="1rem auto"&gt;
+							&lt;tbody style="box-shadow: 0px 0px 15px #e2e2e2;"&gt;
+								&lt;tr&gt;
+									&lt;td class="header"&gt;
+									
+										&lt;table style="width: 100%; max-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="left"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td height="70"&gt;
+														&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td class="" style="text-align: center;"&gt;
+																			&lt;img style="width: 100%; height: auto;" src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/headertwo.png" alt=""&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+                                &lt;tr&gt;
+                                    &lt;td class="innerpadding"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: auto; font-size: 20px; font-style: italic; text-align: center; border-bottom: 1.5px solid #fbbc24;"&gt;&lt;b style="color:#fbbc24"&gt;Hola,&lt;/b&gt; @FullName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                &lt;/tr&gt; 
+                                                &lt;tr&gt;
+													&lt;td&gt;&lt;/td&gt;
+                                                    &lt;td class="tabletitle" style="width: 60%; font-size: 16px; font-weight: bold; font-style: italic; text-align: right; color: #fbbc24;"&gt;@SocialName&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodytop"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold; width: 25%;"&gt;
+                                                        Servicio
+                                                    &lt;/td&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 4px 10px; text-align: justify; width: 75%;"&gt;
+														@Description
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="bodycontent"&gt;
+                                        &lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="background-color: #fbbc24; color: #fff; font-size: 14px; padding: 4px 10px; font-style: italic; font-weight: bold;"&gt;
+                                                        Estado de Servicio
+                                                    &lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td style="font-size: 14px;color:#57585a;border: 1px solid #d1d2d4;padding: 10px; text-align: justify;"&gt;
+														@Message
+
+														&lt;p&gt;Si tiene alguna duda, por favor contactar al personal asignado al servicio. Esperamos que nuestra atención haya sido la esperada. Gracias por confiar en Ferreyros.	&lt;/p&gt;
+													&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                
+								&lt;tr&gt;
+									&lt;td class="innertableprimary"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;OT:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@OT&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Modelo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Model&lt;/td&gt;
+												&lt;/tr&gt;
+
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Marca: &lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Brand&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Nro. de Serie:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@NumberSerie&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+
+								&lt;tr&gt;
+									&lt;td class="innerbotton"&gt;
+                                        &lt;table width="100%" border="0"&gt;
+                                            &lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td colspan="6" style="background-color: #fbbc24;color: #fff;font-size: 14px;padding: 6px 10px;font-style: italic;font-weight: bold;"&gt;Equipo de trabajo&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Supervisor:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Supervisor&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Correo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@SMail&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Celular:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@SPhone&lt;/td&gt;
+												&lt;/tr&gt;
+
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Técnico Líder:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@Technical&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Correo:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@TMail&lt;/td&gt;
+													&lt;td class="tdprimary"&gt;Celular:&lt;/td&gt;
+													&lt;td class="tdsecundary"&gt;@TPhone&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td class="tdprimary"&gt;Cantidad de técnicos asignados:&lt;/td&gt;
+													&lt;td colspan="6" class="tdsecundary"&gt;@Number&lt;/td&gt;
+												&lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								
+								&lt;tr&gt;
+									&lt;td class="footer" bgcolor="#000"&gt;
+										&lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;
+											&lt;tbody&gt;
+												&lt;tr&gt;
+													&lt;td style="padding: 10px 0 10px 0;" align="right"&gt;
+														&lt;table cellspacing="0" cellpadding="0" border="0"&gt;
+															&lt;tbody&gt;
+																&lt;tr&gt;
+																	&lt;td style="text-align: center; padding: 0 10px 0 10px;" width="37"&gt;
+																		&lt;img src="https://serviciodecampo.blob.core.windows.net/filetemplates/images/logo.png" alt="" width="100" border="0"&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/tbody&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/tbody&gt;
+										&lt;/table&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/tbody&gt;
+						&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+</root>

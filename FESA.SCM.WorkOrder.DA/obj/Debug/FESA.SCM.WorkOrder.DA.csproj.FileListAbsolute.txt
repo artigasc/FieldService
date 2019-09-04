@@ -1,0 +1,17 @@
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\FESA.SCM.WorkOrder.DA.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\FESA.SCM.WorkOrder.DA.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\FESA.SCM.Common.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\FESA.SCM.WorkOrder.BE.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\Microsoft.Practices.Unity.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\FESA.SCM.Common.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\bin\Debug\FESA.SCM.WorkOrder.BE.pdb
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\obj\Debug\FESA.SCM.WorkOrder.DA.csprojAssemblyReference.cache
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\obj\Debug\FESA.SCM.WorkOrder.DA.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\obj\Debug\FESA.SCM.WorkOrder.DA.csproj.CopyComplete
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\obj\Debug\FESA.SCM.WorkOrder.DA.dll
+C:\PROYECTOS\FESA.SCM\FESA.SCM-DEV\FESA.SCM.WorkOrder.DA\obj\Debug\FESA.SCM.WorkOrder.DA.pdb

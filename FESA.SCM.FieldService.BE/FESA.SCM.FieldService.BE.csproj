@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E371BCF-DFD4-452C-A9D3-F3E6E995EF0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FESA.SCM.FieldService.BE</RootNamespace>
+    <AssemblyName>FESA.SCM.FieldService.BE</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityBE\Activity.cs" />
+    <Compile Include="ActivityBE\ActivityEntity.cs" />
+    <Compile Include="ActivityBE\ActivityState.cs" />
+    <Compile Include="ActivityBE\ActivityType.cs" />
+    <Compile Include="ActivityBE\IActivityRepository.cs" />
+    <Compile Include="ActivityBE\Trace.cs" />
+    <Compile Include="AssignmentBE\Assignment.cs" />
+    <Compile Include="AssignmentBE\AssignmentStatus.cs" />
+    <Compile Include="AssignmentBE\AssignmentType.cs" />
+    <Compile Include="AssignmentBE\Contact.cs" />
+    <Compile Include="AssignmentBE\IAssignmentRepository.cs" />
+    <Compile Include="AssignmentBE\Location.cs" />
+    <Compile Include="AssignmentBE\Machine.cs" />
+    <Compile Include="AssignmentBE\Personnel.cs" />
+    <Compile Include="AssignmentBE\PersonnelType.cs" />
+    <Compile Include="DocumentBE\Document.cs" />
+    <Compile Include="DocumentBE\DocumentEntity.cs" />
+    <Compile Include="DocumentBE\File.cs" />
+    <Compile Include="DocumentBE\IDocumentRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportBE\IOcupabilityRepository.cs" />
+    <Compile Include="ReportBE\IOcupabilityThroughTimeRepository.cs" />
+    <Compile Include="ReportBE\Ocupability.cs" />
+    <Compile Include="ReportBE\OcupabilityThroughTime.cs" />
+    <Compile Include="ReportBE\Report.cs" />
+    <Compile Include="ReportBE\Types.cs" />
+    <Compile Include="Request.cs" />
+    <Compile Include="ResponseAll.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FESA.SCM.Common\FESA.SCM.Common.csproj">
+      <Project>{550a93d9-bb55-4e21-9a10-19451ef8e255}</Project>
+      <Name>FESA.SCM.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,20 @@
+﻿@model FESA.SCM.WebSite.Models.ReportModel;
+@{
+    ViewData["Title"] = "_FileListSupervisor";
+}
+@if (Model.Files != null) {
+    if (Model.Files.Count >= 0) {
+        foreach (var item in Model.Files) {
+            if (item.Status != 1) {
+                <div style="text-align: right;">
+                    <a href="@item.URL" style="cursor:pointer" class="fileupload">@item.Name</a>
+                    @if (!Model.Sent2) {
+                        if (!Model.Check) {
+                        <label onclick="DeleteFileFinalInformSupervisor('@item.Id')" id="btnDeleteFileFinalInformSupervisor"><i class="fas fa-minus-circle fa-2x" style="color: #ff0000; cursor:pointer"></i></label>
+                        }
+                    }
+                </div>
+            }
+        }
+    }
+}

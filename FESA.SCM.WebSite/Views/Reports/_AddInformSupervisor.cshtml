@@ -1,0 +1,406 @@
+﻿@using Microsoft.AspNetCore.Http
+@using FESA.SCM.WebSite.Helpers
+@model FESA.SCM.WebSite.Models.AssignmentModel;
+@{
+    ViewData["Title"] = "_";
+    FESA.SCM.WebSite.Models.UserModel UserSession = Context.Session.Get<FESA.SCM.WebSite.Models.UserModel>("UserSesion");
+    var totalFiles = 0;
+    if (Model.Report.Files != null) {
+        totalFiles = Model.Report.Files.Count;
+    }
+
+}
+
+<div class="reportsot col-6" style="border-right: solid 2px #e6e6e6;">
+    <div class="reportsot3 col-md-12">
+        <h4>SOBRE EL TÉCNICO:</h4>
+        <p>Nº Horas trabajadas</p>
+
+        @{
+            TimeSpan ts2 = TimeSpan.FromMinutes(Model.Report.TotalMinute);
+        }
+        <div class="row">
+            <div class="col-md-6">
+                <label>HORAS:</label>
+                <input id="WorkHourTechnical" min="0" type="number" class="form-control" placeholder="" readonly value="@ts2.TotalHours">
+                <p class="text-alert" id="ErrorAlertWorkHourTechnical" aria-atomic="true" role="alert"></p>
+            </div>
+            <div class="col-md-6">
+                <label>MINUTOS:</label>
+                <input type="number" min="0" class="form-control" id="WorkMinuteTechnical" placeholder="" readonly value="@ts2.Minutes">
+            </div>
+        </div>
+
+
+
+        @if (Model.Report != null && !string.IsNullOrEmpty(Model.Report.UrlFile)) {
+            if (!Model.Report.Sent2) {
+                <h4>Adjuntar Archivo</h4>
+                <div class="upload-btn-wrapper" id="divUploadTechnicalFileSupervisor" style="display:none;">
+                    <button id="btnUploadTechnicalFileSupervisor" class="btn btn-file">Adjuntar archivo</button>
+                    <label for="file-uploadSupervisor" class="custom-file-upload">
+                    </label>
+                    <input type="file" name="UploadTechnicalFileSupervisor" id="UploadTechnicalFileSupervisor" />
+                    <p class="text-alert" id="ErrorAlertUploadTechnicalFileSupervisor" aria-atomic="true" role="alert"></p>
+
+                </div>
+                <div class="upload-btn-wrapper" id="divShowTechnicalFileSupervisor">
+                    @{
+                        string[] arrname = Model.Report.UrlFile.Split("/");
+                        string namefile = arrname[arrname.Length - 1];
+                    }
+                    <a href="@Model.Report.UrlFile" class="ot buttonDetail">@namefile</a>
+                    @if (!Model.Report.Check || !Model.Report.Sent2) {
+                        <label onclick="QuitFileFinalInformTechnical()" style="cursor:pointer"><i class="fas fa-minus-circle fa-2x" style="color: #ff0000; cursor:pointer"></i></label>
+                    }
+                </div>
+                            }
+                        } @*else {
+            <div class="upload-btn-wrapper" id="divUploadTechnicalFileSupervisor">
+                <button id="btnUploadTech" class="btn btn-file">Adjuntar archivo</button>
+                <label for="file-upload" class="custom-file-upload">
+                </label>
+                <input type="file" name="UploadTechnicalFileSupervisor" id="UploadTechnicalFileSupervisor" />
+                <p class="text-alert" id="ErrorAlertUploadTechnicalFileSupervisor" aria-atomic="true" role="alert"></p>
+            </div>
+        }*@
+
+
+        <br />
+        <label>COMENTARIO DEL TÉCNICO</label>
+        <div class="">
+            @Html.TextArea("Comment1", Model.Report.Comment1, 4, 63, new { @class = "form-control", @readonly = "readonly", @maxlength = 5000 })
+        </div>
+        <div class="row">
+            <p class="time-text">Tiempo de estandar</p>
+            <div class="col-md-6">
+                <label>HORAS:</label>
+                @{
+                    TimeSpan StandarTime1 = TimeSpan.FromMinutes(Convert.ToInt16(Model.Report.TotalMinuteStandard1));
+
+                }
+                <div class="box-reportsOT ">@StandarTime1.TotalHours</div>
+            </div>
+            <div class="col-md-6">
+                <label>MINUTOS:</label>
+                <div class="box-reportsOT ">@StandarTime1.Minutes</div>
+            </div>
+
+            <p class="time-text">Tiempo de entrega final</p>
+            <div class="col-md-6">
+                <label>HORAS:</label>
+
+                <div class="box-reportsOT ">@{
+                    if (Model.Report.DeliveryTime1.HasValue) {
+                        TimeSpan nonNullableTS = Model.Report.DeliveryTime1.Value;
+                        @Math.Round(nonNullableTS.TotalHours)
+                    }
+                }
+                        </div>
+            </div>
+            <div class="col-md-6">
+                <label>MINUTOS:</label>
+                @*@Html.TextBox("FinalMinuteTechnical1", "", new { @class = "form-control" })*@
+                <div class="box-reportsOT ">
+                    @{
+                        if (Model.Report.DeliveryTime1.HasValue) {
+                            TimeSpan nonNullableTS = Model.Report.DeliveryTime1.Value;
+                            @nonNullableTS.Minutes
+                            }
+                        }
+                    </div>
+            </div>
+            @if (Model.Report.Obs1) {
+                <p class="time-text" style="color: #ef4040;">Tiempo de retraso</p>
+                <div class="col-md-6">
+                    <label style="color: #ef4040;">HORAS:</label>
+                    <div class="box-reportsOT " style="border: 1px solid #ef4040;color: #ef4040;">
+                        @{
+                            if (Model.Report.DelayedTime1.HasValue) {
+                                TimeSpan nonNullableTS = Model.Report.DeliveryTime1.Value;
+                                @Math.Round(nonNullableTS.TotalHours)
+                            }
+                        }
+                       
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label style="color: #ef4040;">MINUTOS:</label>
+                    <div class="box-reportsOT " style="border: 1px solid #ef4040;color: #ef4040;">
+                        @{
+                            if (Model.Report.DelayedTime1.HasValue) {
+                                TimeSpan nonNullableTS = Model.Report.DeliveryTime1.Value;
+                                @nonNullableTS.Minutes
+                            }
+                        }
+                      
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="reportsot col-6">
+    <div class="reportsot3 col-md-12">
+        <h4>SOBRE EL SUPERVISOR:</h4>
+
+        @if (!Model.Report.Sent2) {
+            if (!Model.Report.Check) {
+                if (Model.Report.UrlFile != "") {
+                    <div class="upload-btn-wrapper">
+                        <h4>Adjuntar Archivos adicionales</h4>
+                        <br>
+                        <button id="btnUploadSupervisor" class="btn btn-file">Adjuntar archivo</button>
+                        @*<label for="file-uploadTech" class="custom-file-upload fileupload"></label>*@
+                        <input type="file" name="UploadFileSupervisor" id="UploadFileSupervisor" accept="image/jpeg/pdf/doc/" />
+                        <p class="text-alert" id="ErrorAlertUploadFileSupervisor" aria-atomic="true" role="alert"></p>
+                    </div>
+                }
+            }
+        }
+                    <div>
+                        <div>
+
+
+                            <div id="fileListSupervisor">
+                                @{Html.RenderPartial("_FileListSupervisor", Model.Report);}
+                            </div>
+
+                        </div>
+                        <br />
+                        @if (!Model.Report.Sent2) {
+                            if (!Model.Report.Check) {
+
+                                <label>COMENTARIO DEL SUPERVISOR</label>
+                                if (Model.Report.UrlFile == "") {
+                                    <div class="">
+                                        @Html.TextArea("Comment2", Model.Report.Comment2, 4, 63, new { @class = "form-control", @readonly = "readonly" })
+                                    </div>
+                                } else {
+                                    <div class="">
+                                        @Html.TextArea("Comment2", Model.Report.Comment2, 4, 63, new { @class = "form-control" })
+                                    </div>
+                                    <p class="text-alert" id="ErrorAlertComment2" aria-atomic="true" role="alert"></p> 
+                                }
+                            }
+                        } else {
+
+                                    <label>COMENTARIO DEL SUPERVISOR</label>
+                                    <div class="">
+                                        @Html.TextArea("Comment2", Model.Report.Comment2, 4, 63, new { @class = "form-control", @readonly = "readonly" })
+                                    </div>
+
+                        }
+
+                        <div class="row">
+                            <p class="time-text">Tiempo de estandar</p>
+                            <div class="col-md-6">
+                                <label>HORAS:</label>
+                                @{
+                                    TimeSpan StandarTime2 = TimeSpan.FromMinutes(Convert.ToInt16(Model.Report.TotalMinuteStandard2));
+
+                                }
+                                <div class="box-reportsOT ">@StandarTime2.TotalHours</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>MINUTOS:</label>
+                                <div class="box-reportsOT ">@StandarTime2.Minutes</div>
+                            </div>
+
+                            <p class="time-text">Tiempo de entrega final</p>
+                            <div class="col-md-6">
+                                <label>HORAS:</label>
+
+                                <div class="box-reportsOT ">
+                                    @{
+                                        if (Model.Report.DeliveryTime2.HasValue) {
+                                            TimeSpan nonNullableTS = Model.Report.DeliveryTime2.Value;
+                                            @Math.Round(nonNullableTS.TotalHours)
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>MINUTOS:</label>
+                                @*@Html.TextBox("FinalMinuteTechnical1", "", new { @class = "form-control" })*@
+                                <div class="box-reportsOT ">
+                                    @{
+                                        if (Model.Report.DeliveryTime2.HasValue) {
+                                            TimeSpan nonNullableTS = Model.Report.DeliveryTime2.Value;
+                                            @nonNullableTS.Minutes
+                                        }
+                                    }
+                                      </div>
+                            </div>
+                            @if (Model.Report.Obs2) {
+                                <p class="time-text" style="color: #ef4040;">Tiempo de retraso</p>
+                                <div class="col-md-6">
+                                    <label style="color: #ef4040;">HORAS:</label>
+                                    <div class="box-reportsOT " style="border: 1px solid #ef4040;color: #ef4040;">
+                                        @{
+                                            if (Model.Report.DelayedTime2.HasValue) {
+                                                TimeSpan nonNullableTS = Model.Report.DelayedTime2.Value;
+                                                @Math.Round(nonNullableTS.TotalHours)
+                                            }
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label style="color: #ef4040;">MINUTOS:</label>
+                                    <div class="box-reportsOT " style="border: 1px solid #ef4040;color: #ef4040;">
+                                        @{
+                                            if (Model.Report.DelayedTime2.HasValue) {
+                                                TimeSpan nonNullableTS = Model.Report.DelayedTime2.Value;
+                                                @nonNullableTS.Minutes
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check form-check-inline" style="margin: 12px 0;">
+                                @if (!Model.Report.Sent2) {
+                                    if (!Model.Report.Check) {
+                                        <input class="form-check-input" type="radio" name="idcheck" id="idcheck">
+
+                                    } else {
+                                        <input class="form-check-input" type="radio" name="idcheck" id="idcheck" checked="checked">
+
+                                    }
+                                }
+
+                                <p class="form-check-label" for="idcheck">Marcar como revisado</p>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-35 mb-15" style="text-align: center;">
+                            @if (!Model.Report.Sent2) {
+                                if (!Model.Report.Check) {
+                                    if (Model.Report.UrlFile != "") {
+                                        <button onclick="ValidateInformFinalSupervisor(1);" class="btn btn-save">Guardar</button>
+                                        <button class="btn btn-send" onclick="ValidateInformFinalSupervisor(2);">Enviar</button>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+    </div>
+</div>
+
+<script>
+     function ValidateInformFinalSupervisor(action) {
+         var urlfile = '@Model.Report.UrlFile';
+        var totalFiles = '@Model.Report.Files?.Count';
+         if (urlfile != "") {
+             if (totalFiles == '0') {
+                 var file = $("#UploadFileSupervisor")[0].files[0];
+                 if ($("#UploadFileSupervisor")[0].files.length === 0) {
+                     document.getElementById('ErrorAlertUploadFileSupervisor').innerHTML = 'Debe adjuntar un Archivo';
+                     return false;
+                 }
+                 var arrname = file.name.split(".");
+                 if (arrname[1] == "exe") {
+                     document.getElementById('ErrorAlertUploadFileSupervisor').innerHTML = 'Extensión de Archivo no permitida';
+                     return false;
+                 }
+                 //if (file.size >= 21000) {
+                 //    document.getElementById('ErrorAlertUploadFileSupervisor').innerHTML = 'Debe adjuntar un Archivo menos a 20 megas';
+                 //    return false;
+                 //}
+             } 
+        }
+
+        if ($('#Comment2').val().trim() == "") {
+            document.getElementById('ErrorAlertComment2').innerHTML = 'Debe agregar un dato';
+            return false;
+        }
+
+        if (action == 1) {
+            $('#OTSaveSupervisorInform').modal('show');
+        } else {
+            $('#OTSendSupervisorInform').modal('show');
+        }
+    }
+
+    $('#UploadTechnicalFileSupervisor').change(function () {
+        if ($("#UploadTechnicalFileSupervisor")[0].files.length === 0) {
+            var file = $("#UploadTechnicalFileSupervisor")[0].files[0];
+            var arrname = file.name.split(".");
+            $(this).prev('label').text("InformeFinal" + '@Model.WorkOrderNumber' + "." + arrname[1]);
+            document.getElementById('ErrorAlertUploadTechnicalFileSupervisor').innerHTML = '';
+        }
+
+    });
+     function DeleteFileFinalInformSupervisor(id) {
+        var model = {
+                    Id: id
+                };
+                    $.ajax({
+                        url: "/Reports/DeleteFileFinalInformSupervisor",
+                        method: "POST",
+                        data: JSON.stringify(model),
+                        dataType: 'html',
+                        contentType: 'application/json',
+                        async: true,
+                        success: function (response) {
+                            $("#fileListSupervisor").html(response);
+ 
+                        },
+                        beforeSend: function () {
+                            $("body").fadeIn(function () {
+                                $(".loader").show();
+                            });
+                        },
+                        complete: function () {
+                            $(".loader").hide();
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+                        }
+                    });
+
+
+    }
+
+    $('#UploadFileSupervisor').change(function () {
+        var File = $("#UploadFileSupervisor")[0].files[0];
+        $(this).prev('label').text(File.name);
+        document.getElementById('ErrorAlertUploadFileSupervisor').innerHTML = '';
+    });
+
+    $('#UploadFileSupervisor').on('change', function (e) {
+      
+        $.ajax({
+             url: "/Reports/AddSupervisorFile",
+             method: "POST",
+             data: function () {
+                  var data = new FormData();
+                  if ($("#UploadFileSupervisor")[0].files.length >= 0) {
+                        FileSupervisor = $("#UploadFileSupervisor")[0].files[0];
+                         data.append("FilesSupervisorAdd", FileSupervisor);
+                  }
+                   return data;
+             }(),
+            dataType: "html",
+            contentType: false,
+            processData: false,
+            async: true,
+             success: function (response) {
+                 if (response.content == "Error") {
+                       window.location.href = '@Url.Action("ConsultationReports", "Reports")';
+                 }
+                 $("#fileListSupervisor").html(response);
+             },
+             error: function (xhr) {
+               console.log(xhr.status + ": " + xhr.responseText);
+             }
+          });
+
+    })
+
+
+    </script>
+
